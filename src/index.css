@@ -17,7 +17,7 @@ body {
   100% { background-position: 0%   50%; }
 }
 
-/* Mobile: disable hero gradient animation and glow orbs for perf */
+/* Mobile: disable expensive background-position animation and glow blurs */
 @media (max-width: 767px) {
   .hero-animated {
     animation: none !important;
@@ -26,6 +26,28 @@ body {
   }
   .hero-glow {
     display: none !important;
+  }
+}
+
+/* Mobile-only: lightweight transform-based drift layer */
+@keyframes heroDriftX {
+  0%   { transform: translateX(0)     translateY(0); }
+  33%  { transform: translateX(18px)  translateY(-10px); }
+  66%  { transform: translateX(-12px) translateY(8px); }
+  100% { transform: translateX(0)     translateY(0); }
+}
+
+@media (max-width: 767px) {
+  .hero-drift {
+    display: block;
+    animation: heroDriftX 30s ease-in-out infinite;
+    will-change: transform;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-drift {
+    display: none;
   }
 }
 

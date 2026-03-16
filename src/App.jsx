@@ -218,6 +218,14 @@ export default function App() {
           }}
         />
 
+        {/* Mobile-only: GPU-friendly drift layer — uses transform only, no blur */}
+        <div
+          className="hero-drift absolute inset-[-10%] pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(15,118,110,0.18) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 20% 70%, rgba(20,184,166,0.10) 0%, transparent 65%)',
+          }}
+        />
+
         {/* ── integrated nav ── */}
         <nav className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <span className="font-bold text-white text-lg tracking-tight">SiteRunner</span>

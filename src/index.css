@@ -17,37 +17,30 @@ body {
   100% { background-position: 0%   50%; }
 }
 
-/* Mobile: disable expensive background-position animation and glow blurs */
+/* ── Mobile hero: fully static, no animation, no blur, no pulse ── */
 @media (max-width: 767px) {
+  /* Stop background-position animation, lock to static gradient */
   .hero-animated {
     animation: none !important;
+    background: linear-gradient(160deg, #020617 0%, #0f172a 45%, #0a4f4a 100%) !important;
     background-size: 100% 100% !important;
-    background-position: 0% 50% !important;
   }
+  /* Hide heavy blur glow orbs */
   .hero-glow {
     display: none !important;
   }
-}
-
-/* Mobile-only: lightweight transform-based drift layer */
-@keyframes heroDriftX {
-  0%   { transform: translateX(0)     translateY(0); }
-  33%  { transform: translateX(18px)  translateY(-10px); }
-  66%  { transform: translateX(-12px) translateY(8px); }
-  100% { transform: translateX(0)     translateY(0); }
-}
-
-@media (max-width: 767px) {
-  .hero-drift {
-    display: block;
-    animation: heroDriftX 30s ease-in-out infinite;
-    will-change: transform;
+  /* Hide dot-grid texture (forces full-coverage repaint on scroll) */
+  .hero-dot-grid {
+    display: none !important;
   }
-}
-
-@media (min-width: 768px) {
-  .hero-drift {
-    display: none;
+  /* Disable pulse animation on badge dot */
+  .hero-badge-dot {
+    animation: none !important;
+  }
+  /* Remove backdrop-blur on badge (triggers compositing layer) */
+  .hero-badge {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 }
 

@@ -232,22 +232,15 @@ export default function App() {
         <div className="hero-glow absolute bottom-0 left-0 w-[480px] h-[480px] rounded-full bg-teal-600/18 blur-[110px] pointer-events-none" />
         <div className="hero-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-teal-500/6 blur-[100px] pointer-events-none" />
 
-        {/* dot-grid texture */}
+        {/* dot-grid texture — hidden on mobile for performance */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="hero-dot-grid absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: 'radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px)',
             backgroundSize: '28px 28px',
           }}
         />
 
-        {/* Mobile-only: GPU-friendly drift layer — uses transform only, no blur */}
-        <div
-          className="hero-drift absolute inset-[-10%] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(15,118,110,0.18) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 20% 70%, rgba(20,184,166,0.10) 0%, transparent 65%)',
-          }}
-        />
 
         {/* ── integrated nav ── */}
         <nav className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -266,8 +259,8 @@ export default function App() {
 
         {/* ── hero content ── */}
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-28 md:pt-20 md:pb-36 text-center animate-fade-in">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-3.5 py-1.5 text-xs font-semibold text-teal-300 mb-8 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+          <div className="hero-badge inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-3.5 py-1.5 text-xs font-semibold text-teal-300 mb-8 backdrop-blur-sm">
+            <span className="hero-badge-dot w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
             Free websites for any business
           </div>
 

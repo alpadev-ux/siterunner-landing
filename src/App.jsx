@@ -197,17 +197,17 @@ export default function App() {
 
       {/* ── Hero (nav integrated) ─────────────────────────────────── */}
       <header
-        className="relative overflow-hidden"
+        className="relative overflow-hidden hero-animated"
         style={{
           background: 'linear-gradient(135deg, #020617 0%, #0f172a 30%, #0f766e 62%, #0f172a 84%, #020617 100%)',
           backgroundSize: '300% 300%',
           animation: 'heroGradientShift 18s ease infinite',
         }}
       >
-        {/* ambient glow orbs */}
-        <div className="absolute -top-40 -right-24 w-[600px] h-[600px] rounded-full bg-teal-400/12 blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[480px] h-[480px] rounded-full bg-teal-600/18 blur-[110px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-teal-500/6 blur-[100px] pointer-events-none" />
+        {/* ambient glow orbs — hidden on mobile for performance */}
+        <div className="hero-glow absolute -top-40 -right-24 w-[600px] h-[600px] rounded-full bg-teal-400/12 blur-[130px] pointer-events-none" />
+        <div className="hero-glow absolute bottom-0 left-0 w-[480px] h-[480px] rounded-full bg-teal-600/18 blur-[110px] pointer-events-none" />
+        <div className="hero-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-teal-500/6 blur-[100px] pointer-events-none" />
 
         {/* dot-grid texture */}
         <div

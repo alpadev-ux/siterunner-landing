@@ -17,6 +17,18 @@ body {
   100% { background-position: 0%   50%; }
 }
 
+/* Mobile: disable hero gradient animation and glow orbs for perf */
+@media (max-width: 767px) {
+  .hero-animated {
+    animation: none !important;
+    background-size: 100% 100% !important;
+    background-position: 0% 50% !important;
+  }
+  .hero-glow {
+    display: none !important;
+  }
+}
+
 /* ── Demo window gentle float ── */
 @keyframes floatDemo {
   0%, 100% { transform: translateY(0px);  }

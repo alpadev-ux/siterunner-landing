@@ -247,7 +247,7 @@ export default function App() {
             <span className="text-white">Website for Free</span>
           </h1>
 
-          <p className="mt-8 text-xl sm:text-2xl max-w-2xl mx-auto leading-[1.75]" style={{ color: 'rgba(255,255,255,0.75)' }}>
+          <p className="mt-8 text-base sm:text-xl md:text-2xl max-w-xl sm:max-w-2xl mx-auto leading-[1.7] sm:leading-[1.75]" style={{ color: 'rgba(255,255,255,0.75)' }}>
             We create or refresh your website at no cost.<br />
             Happy with it? Keep it for a small monthly fee.<br />
             Need a change? Just send us a text.

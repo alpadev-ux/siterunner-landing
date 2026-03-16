@@ -172,21 +172,44 @@ function IndustryTypewriter() {
 /* ─────────────────────── main app ───────────────────────────────────── */
 export default function App() {
   const [formData, setFormData] = useState({
-    restaurantName: '',
-    websiteUrl: '',
+    business_name: '',
+    website_url: '',
     name: '',
     email: '',
     phone: '',
     message: '',
   })
+  const [formStatus, setFormStatus] = useState('idle') // 'idle' | 'loading' | 'success' | 'error'
 
   const handleFormChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Lead form submitted:', formData)
-    alert("Thanks! We'll be in touch soon to review your website.")
+    if (formStatus === 'loading') return
+    setFormStatus('loading')
+    try {
+      const payload = {
+        access_key: 'fc05109e-be57-4471-ac9c-77b28ac9952f',
+        subject: 'New SiteRunner Lead',
+        botcheck: '',
+        ...formData,
+      }
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setFormStatus('success')
+        setFormData({ business_name: '', website_url: '', name: '', email: '', phone: '', message: '' })
+      } else {
+        setFormStatus('error')
+      }
+    } catch {
+      setFormStatus('error')
+    }
   }
 
   const scrollTo = (id) =>
@@ -697,35 +720,66 @@ export default function App() {
               ))}
             </ul>
             <div className="mt-10 rounded-2xl border border-gray-200 bg-white p-6 sm:p-10 shadow-[0_8px_40px_-8px_rgb(0,0,0,0.1)]">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <FormField label="Business name" name="restaurantName" type="text" placeholder="e.g. Apex Plumbing Co." value={formData.restaurantName} onChange={handleFormChange} required />
-                  <FormField label="Website URL" name="websiteUrl" type="url" placeholder="https://yourbusiness.com" value={formData.websiteUrl} onChange={handleFormChange} required />
+              {formStatus === 'success' ? (
+                <div className="text-center py-8">
+                  <div className="w-14 h-14 rounded-full bg-teal-50 text-teal-500 flex items-center justify-center mx-auto mb-4">
+                    {Icon.check}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">You're all set!</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    We received your request and will be in touch shortly to get started on your free website.
+                  </p>
+                  <button
+                    onClick={() => setFormStatus('idle')}
+                    className="mt-6 text-sm text-accent font-semibold hover:underline"
+                  >
+                    Submit another request
+                  </button>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <FormField label="Your name" name="name" type="text" placeholder="Your name" value={formData.name} onChange={handleFormChange} required />
-                  <FormField label="Email" name="email" type="email" placeholder="you@example.com" value={formData.email} onChange={handleFormChange} required />
-                </div>
-                <FormField label="Phone (optional)" name="phone" type="tel" placeholder="(555) 123-4567" value={formData.phone} onChange={handleFormChange} />
-                <label className="block">
-                  <span className="text-sm font-semibold text-gray-700">Message (optional)</span>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleFormChange}
-                    rows={3}
-                    className="mt-1.5 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all resize-none"
-                    placeholder="Anything specific you'd like us to look at?"
-                  />
-                </label>
-                <button
-                  type="submit"
-                  className="mt-2 w-full rounded-xl bg-accent hover:bg-accent-hover text-white font-bold py-4 text-base transition-all duration-200 shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1"
-                >
-                  Request My Free Improvement
-                </button>
-                <p className="text-center text-xs text-gray-400 mt-3">No credit card. No commitment. Just a free look at your site.</p>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Web3Forms hidden fields */}
+                  <input type="hidden" name="access_key" value="fc05109e-be57-4471-ac9c-77b28ac9952f" />
+                  <input type="hidden" name="subject" value="New SiteRunner Lead" />
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormField label="Business name" name="business_name" type="text" placeholder="e.g. Apex Plumbing Co." value={formData.business_name} onChange={handleFormChange} required />
+                    <FormField label="Website URL" name="website_url" type="url" placeholder="https://yourbusiness.com" value={formData.website_url} onChange={handleFormChange} />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormField label="Your name" name="name" type="text" placeholder="Your name" value={formData.name} onChange={handleFormChange} required />
+                    <FormField label="Email" name="email" type="email" placeholder="you@example.com" value={formData.email} onChange={handleFormChange} required />
+                  </div>
+                  <FormField label="Phone (optional)" name="phone" type="tel" placeholder="(555) 123-4567" value={formData.phone} onChange={handleFormChange} />
+                  <label className="block">
+                    <span className="text-sm font-semibold text-gray-700">Message (optional)</span>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleFormChange}
+                      rows={3}
+                      className="mt-1.5 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all resize-none"
+                      placeholder="Anything specific you'd like us to look at?"
+                    />
+                  </label>
+
+                  {formStatus === 'error' && (
+                    <p className="text-sm text-red-500 text-center">
+                      Something went wrong. Please try again or email us directly.
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={formStatus === 'loading'}
+                    className="mt-2 w-full rounded-xl bg-accent hover:bg-accent-hover text-white font-bold py-4 text-base transition-all duration-200 shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                  >
+                    {formStatus === 'loading' ? 'Sending…' : 'Request My Free Website'}
+                  </button>
+                  <p className="text-center text-xs text-gray-400 mt-3">No credit card. No commitment. Just a free look at your site.</p>
+                </form>
+              )}
             </div>
           </Reveal>
         </div>

@@ -542,65 +542,8 @@ export default function App() {
 
 
 
-      {/* ── Before / After ───────────────────────────────────────── */}
-      <section className="py-16 md:py-24" style={{ background: 'linear-gradient(180deg,#f8fafc 0%,#ffffff 100%)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <SectionLabel text="The transformation" />
-            <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
-              What your website could look like
-            </h2>
-          </Reveal>
-          <Reveal delay={120}>
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Before */}
-              <div className="rounded-2xl border border-red-100 bg-red-50/40 p-6">
-                <div className="flex items-center gap-2 mb-5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-red-500">Before</span>
-                </div>
-                <ul className="space-y-3">
-                  {[
-                    'Looks outdated and unprofessional',
-                    'Hard to update without a developer',
-                    'Not optimized for mobile',
-                    'Built years ago and never touched',
-                    'Slow to load, hard to navigate',
-                  ].map(item => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600">
-                      <span className="mt-0.5 flex-shrink-0 text-red-400">
-                        <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/></svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* After */}
-              <div className="rounded-2xl border border-teal-200 bg-teal-50/40 p-6">
-                <div className="flex items-center gap-2 mb-5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-teal-600">After</span>
-                </div>
-                <ul className="space-y-3">
-                  {[
-                    'Clean, modern design that builds trust',
-                    'Update anything by sending a text',
-                    'Fully mobile-optimized from day one',
-                    'Refreshed and relaunched quickly',
-                    'Fast, clear, easy to navigate',
-                  ].map(item => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
-                      <span className="mt-0.5 flex-shrink-0 text-teal-500">{Icon.check}</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* ── Before / After Visual Mockup ──────────────────────────── */}
+      <WebsiteTransformation />
 
       {/* ── What We Handle ───────────────────────────────────────── */}
       <section className="py-16 md:py-24 bg-white border-t border-gray-100">
@@ -1673,6 +1616,341 @@ const FAQS = [
   { q: 'What if I already have a site?',  a: 'Great. We can work with what you have, refresh the design, or rebuild it cleanly. Your call.' },
   { q: 'Is there a contract?',            a: 'No contracts. Month-to-month only. Cancel anytime with no penalties.' },
 ]
+
+/* ───────────────── website transformation showcase ─────────────────── */
+function WebsiteTransformation() {
+  return (
+    <section className="py-16 md:py-24 overflow-hidden" style={{ background: 'linear-gradient(180deg,#f8fafc 0%,#ffffff 100%)' }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionLabel text="The transformation" />
+          <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
+            See the difference for yourself
+          </h2>
+          <p className="mt-4 text-center text-gray-500 max-w-xl mx-auto">
+            This is a real example of the kind of transformation we deliver — same business, completely different impression.
+          </p>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-10 items-start">
+
+            {/* ── BEFORE browser ─────────────────────────────────── */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                <span className="text-xs font-bold uppercase tracking-widest text-red-500">Before — typical outdated site</span>
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_-8px_rgba(0,0,0,0.18)] border border-gray-200" style={{ height: 560 }}>
+                {/* browser chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#e8e8e8] border-b border-gray-300">
+                  <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                  <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                  <span className="w-3 h-3 rounded-full bg-[#28c840]" />
+                  <div className="flex-1 mx-3 rounded bg-white border border-gray-300 h-6 flex items-center px-2.5 text-[11px] text-gray-400">
+                    www.mikesplumbing.net
+                  </div>
+                </div>
+                {/* Nuzzo-style page — red outer bg, white centered content */}
+                <div className="bg-[#cc0000] p-[6px] h-full" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+                  <div className="bg-white">
+                    {/* header row */}
+                    <div className="flex items-stretch border-b-2 border-gray-300">
+                      {/* logo box */}
+                      <div className="flex-1 flex items-center px-3 py-3 border-r border-gray-200">
+                        <div className="border-2 border-[#cc0000] px-3 py-2 text-center flex-shrink-0">
+                          <div className="text-[13px] font-extrabold text-[#cc0000] leading-tight tracking-wide">MIKE&apos;S</div>
+                          <div className="text-[11px] font-extrabold text-[#cc0000] leading-tight tracking-wide border-t border-[#cc0000] mt-1 pt-1">SEWER &amp; PLUMBING</div>
+                        </div>
+                        <div className="ml-3 text-[9px] italic text-gray-400" style={{ fontFamily: 'Georgia, serif' }}>Satisfied Customers Since 1991</div>
+                      </div>
+                      {/* right info — phone buried, low contrast */}
+                      <div className="flex flex-col justify-center px-3 py-2 text-right flex-shrink-0">
+                        <div className="bg-black text-white text-[9px] font-bold italic px-2 py-1.5 mb-1.5 text-center leading-tight">
+                          Experience Ensures<br/>Reliability
+                        </div>
+                        <div className="text-[9px] text-gray-300">(555) 482-9921</div>
+                        <div className="text-[7px] text-gray-300 tracking-wide">free estimates</div>
+                      </div>
+                    </div>
+
+                    {/* nav bar — inconsistent sizes, some items cramped */}
+                    <div className="flex bg-[#1a1a1a] overflow-hidden">
+                      {[
+                        {n:'Home', s:'text-[9px]', bold: true},
+                        {n:'Plumbing Services', s:'text-[7.5px]'},
+                        {n:'Flood Control', s:'text-[8px]'},
+                        {n:'Sewer Repairs', s:'text-[8.5px]'},
+                        {n:'Remodeling', s:'text-[7px]'},
+                        {n:'About Us', s:'text-[9px]'},
+                        {n:'Reviews', s:'text-[8px]'},
+                        {n:'Contact', s:'text-[10px]'},
+                      ].map(({n,s,bold},i) => (
+                        <div key={n} className={`${s} px-2 py-2 cursor-pointer border-r border-gray-700 whitespace-nowrap flex-shrink-0 ${i===0 ? 'bg-[#cc0000] text-white font-bold' : 'text-[#dddddd]'} ${bold ? 'font-bold':''}`}>{n}</div>
+                      ))}
+                    </div>
+
+                    {/* body */}
+                    <div className="p-3">
+                      {/* hero — no photo, full width */}
+                      <div className="mb-3">
+                        <h1 className="text-[22px] font-bold text-black leading-tight mb-1" style={{ fontFamily: 'Times New Roman, Georgia, serif', letterSpacing: '-0.5px' }}>
+                          Chicago Plumbing,<br/>
+                          <span className="text-[16px] font-normal">Sewer &amp; Flood</span><br/>
+                          <span className="text-[19px]">Control Specialists</span>
+                        </h1>
+                        <hr className="border-gray-300 my-1.5" style={{ borderStyle: 'dashed' }} />
+                        <p className="text-[7.5px] text-[#333] leading-[1.3] mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          Mike&apos;s Sewer &amp; Plumbing offers professional, experienced, and reliable plumber services for all homes, businesses, and industries in Chicago, IL and surrounding suburbs. We offer complete services for all your plumbing and sewer needs.
+                        </p>
+                        <p className="text-[8px] text-[#555] leading-[1.35]" style={{ fontFamily: 'Comic Sans MS, cursive' }}>
+                          Mike&apos;s Plumbing was started by Leo Mike in <u>1991</u>. Our family owned and operated business of <b>2 generations</b> is now operated by his son. Mike holds a City of Chicago Contractor &amp; Journeyman Plumber license, City of Chicago Drainlayers License, State of Illinois Public Health Plumbing Contractor license and Cook County Sewer, Water and Plumbing licenses.
+                        </p>
+                      </div>
+
+                      {/* random divider */}
+                      <div className="text-center text-[8px] text-[#cc0000] font-bold border-t border-b border-[#cc0000] py-1 mb-2 tracking-widest uppercase">
+                        * * * Our Services * * *
+                      </div>
+
+                      {/* 3-col services — no photos, links buried as plain low-contrast text */}
+                      <div className="grid grid-cols-3 gap-2">
+                        {[
+                          {
+                            t: 'Plumbing Installation and Repair',
+                            tSize: 'text-[10px]',
+                            links: [
+                              { anchor: 'Plumbing Installation and Repair', rest: ' – All fixtures including toilets, sinks, showers, bath tubs, water heaters, and more.' },
+                              { anchor: 'Rehab and Remodeling', rest: ' – Specializing in rehab and remodeling for all homes and businesses' },
+                            ]
+                          },
+                          {
+                            t: 'Flood Control',
+                            tSize: 'text-[8.5px]',
+                            links: [
+                              { anchor: 'Flood Control', rest: ' – Lifetime guaranteed to prevent backup from city sewer mains.' },
+                              { anchor: 'Water Services', rest: ' – Trenchless water line installation is available for new water service without digging into your yard.' },
+                            ]
+                          },
+                          {
+                            t: 'Sewer Repair',
+                            tSize: 'text-[11px]',
+                            links: [
+                              { anchor: 'Sewer Repairs', rest: ' – Power rodding, video inspection, sewer pipe location, and cleanout installation.' },
+                            ]
+                          },
+                        ].map(({t,tSize,links}) => (
+                          <div key={t} className="border border-gray-300 p-1">
+                            <div className={`${tSize} font-bold text-black mb-0.5 leading-tight`}>{t}</div>
+                            {links.map(({anchor,rest}) => (
+                              <p key={anchor} className="text-[7.5px] leading-snug mb-0.5 text-gray-400">
+                                <span>{anchor}</span>
+                                <span>{rest}</span>
+                              </p>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* NEW badge — faded */}
+                      <div className="mt-2 text-right">
+                        <span className="text-[7px] text-gray-300 border border-gray-200 px-2 py-0.5">NEW! Now offering Remodeling services - call for details</span>
+                      </div>
+                    </div>
+
+                    {/* footer — all contact info faded */}
+                    <div className="bg-[#eeeeee] border-t-2 border-gray-300 px-4 py-2.5 grid grid-cols-3 gap-2 text-center">
+                      {[
+                        {sym:'&#9742;', t:'CONTACT US', sub:'(555) 482-9921'},
+                        {sym:'&#8962;', t:'Address', sub:'3819 W. 40th St. Chicago IL'},
+                        {sym:'&#10003;', t:'SERVICE AREA', sub:'Cook & DuPage County'},
+                      ].map(({sym,t,sub}) => (
+                        <div key={t}>
+                          <div className="text-[12px] text-gray-300" dangerouslySetInnerHTML={{ __html: sym }} />
+                          <div className="text-[8px] text-gray-300 uppercase">{t}</div>
+                          <div className="text-[7px] text-gray-300">{sub}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="bg-white border-t border-gray-200 px-3 py-1.5 flex items-center justify-between">
+                      <div className="text-[7px] text-gray-300">Copyright &copy; 2011 Mike&apos;s Plumbing LLC | All Rights Reserved</div>
+                      <div className="text-[7px] text-gray-300 font-mono">Visits: 004,872</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* caption */}
+              <div className="flex flex-wrap gap-2">
+                {['No mobile support','Impossible to update','Drives customers away','Looks abandoned'].map(t => (
+                  <span key={t} className="text-[11px] text-red-500 bg-red-50 border border-red-100 rounded-full px-3 py-1">{t}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* ── AFTER browser ──────────────────────────────────── */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
+                <span className="text-xs font-bold uppercase tracking-widest text-teal-600">After — SiteRunner rebuild</span>
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_-8px_rgba(0,0,0,0.18)] border border-gray-200" style={{ height: 560 }}>
+                {/* chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f5f5f5] border-b border-gray-200">
+                  <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                  <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                  <span className="w-3 h-3 rounded-full bg-[#28c840]" />
+                  <div className="flex-1 mx-3 rounded-md bg-white border border-gray-200 h-6 flex items-center px-2.5 text-[11px] text-gray-400">
+                    mikesplumbing.com
+                  </div>
+                </div>
+                {/* 10/10 conversion-optimised plumbing homepage */}
+                <div className="bg-white" style={{ fontFamily: '"Inter", system-ui, -apple-system, sans-serif' }}>
+
+                  {/* ── 1. Emergency alert bar ── */}
+                  <div className="bg-[#b91c1c] px-4 py-1.5 flex items-center justify-between">
+                    <span className="text-[7.5px] font-semibold text-white/90 tracking-wider uppercase">24/7 Emergency Response Available</span>
+                    <span className="text-[8.5px] font-extrabold text-white tracking-wide">(555) 482-9921</span>
+                  </div>
+
+                  {/* ── 2. Nav ── */}
+                  <div className="flex items-center justify-between px-4 py-3 bg-[#111]">
+                    <div>
+                      <div className="text-[11px] font-bold text-white tracking-tight leading-none">Mike&apos;s Plumbing</div>
+                      <div className="text-[7px] text-gray-500 mt-0.5 font-medium">Chicago, IL · Lic. #PLB-48821</div>
+                    </div>
+                    <div className="flex items-center gap-3 text-[8.5px] text-gray-400">
+                      <span>Services</span><span>About</span><span>Reviews</span>
+                    </div>
+                    <div className="text-[8.5px] font-bold text-white bg-[#b91c1c] rounded-sm px-3 py-1.5 tracking-wide cursor-pointer">Call Now</div>
+                  </div>
+
+                  {/* ── 3. Hero ── */}
+                  <div className="bg-[#111] px-4 pt-5 pb-5">
+                    {/* eyebrow */}
+                    <div className="flex items-center gap-1.5 mb-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#b91c1c] flex-shrink-0" />
+                      <span className="text-[7.5px] font-semibold text-gray-400 uppercase tracking-widest">Same-Day Dispatch · Licensed &amp; Insured</span>
+                    </div>
+                    {/* headline */}
+                    <div className="text-[18px] font-extrabold text-white leading-[1.15] tracking-tight mb-2.5">
+                      Chicago&apos;s 24/7<br/>Emergency Plumbers
+                    </div>
+                    {/* subheadline */}
+                    <div className="text-[9px] text-gray-400 leading-relaxed mb-4" style={{maxWidth: 280}}>
+                      Burst pipes, sewer backups, clogged drains — we handle it all. Family-owned since 1991, serving Chicago and suburbs.
+                    </div>
+                    {/* primary CTA */}
+                    <div className="bg-[#b91c1c] rounded-md py-3 text-center mb-2 cursor-pointer" style={{boxShadow:'0 2px 16px rgba(185,28,28,0.45)'}}>
+                      <span className="text-[11px] font-extrabold text-white tracking-wide">📞 Call Now — (555) 482-9921</span>
+                    </div>
+                    {/* secondary CTA */}
+                    <div className="border border-white/15 rounded-md py-2 text-center cursor-pointer">
+                      <span className="text-[9px] font-semibold text-white/70">Get a Free Estimate</span>
+                    </div>
+                    {/* trust stats */}
+                    <div className="flex items-center mt-4 pt-4 border-t border-white/10">
+                      {[
+                        {n:'30+',   l:'Years\nExperience',   gold:false},
+                        {n:'5,000+', l:'Jobs\nCompleted',   gold:false},
+                        {n:'4.9★',  l:'Google Rating\n300+ Reviews', gold:true},
+                      ].map(({n,l,gold},i) => (
+                        <div key={l} className={`flex-1 text-center py-0.5 ${i < 2 ? 'border-r border-white/10' : ''}`}>
+                          <div className={`text-[12px] font-extrabold leading-none ${gold ? 'text-[#fbbf24]' : 'text-white'}`}>{n}</div>
+                          <div className="text-[7px] text-gray-500 mt-1 leading-snug whitespace-pre-line">{l}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ── 4. Fast Response Guarantee ── */}
+                  <div className="bg-[#f8f8f8] border-b border-gray-200 px-4 py-3 flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#b91c1c] flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-[10px] font-bold leading-none">!</span>
+                    </div>
+                    <div>
+                      <div className="text-[9px] font-bold text-gray-900 leading-tight">Fast Response Guarantee</div>
+                      <div className="text-[7.5px] text-gray-500 mt-0.5 leading-relaxed">Plumbers dispatched immediately. Most calls handled same day.</div>
+                    </div>
+                  </div>
+
+                  {/* ── 5. Services ── */}
+                  <div className="bg-white px-4 pt-4 pb-4">
+                    <div className="text-[8px] font-bold text-gray-400 uppercase tracking-widest mb-3">What We Fix</div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        {dot:'#b91c1c', t:'Sewer & Drain Repair',    d:'Fast clearing & camera inspection'},
+                        {dot:'#b91c1c', t:'Flood Control',            d:'City-certified, lifetime guarantee'},
+                        {dot:'#b91c1c', t:'Plumbing Installation',    d:'Fixtures, water heaters & more'},
+                        {dot:'#b91c1c', t:'Emergency Plumbing',       d:'24/7 · Rapid same-day dispatch'},
+                      ].map(({dot,t,d}) => (
+                        <div key={t} className="rounded-md border border-gray-100 bg-[#fafafa] p-2.5">
+                          <div className="flex items-center gap-1.5 mb-1">
+                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{background:dot}} />
+                            <div className="text-[9px] font-semibold text-gray-900 leading-tight">{t}</div>
+                          </div>
+                          <div className="text-[7.5px] text-gray-500 leading-snug pl-3">{d}</div>
+                        </div>
+                      ))}
+                    </div>
+                    {/* service area */}
+                    <div className="mt-3 text-[7.5px] text-gray-400 text-center">
+                      Serving Chicago · Naperville · Evanston · Oak Park &amp; all suburbs
+                    </div>
+                  </div>
+
+                  {/* ── 6. Testimonial ── */}
+                  <div className="bg-[#f8f8f8] border-t border-b border-gray-200 px-4 py-3.5">
+                    <div className="flex gap-0.5 mb-2">
+                      {[1,2,3,4,5].map(i=><span key={i} className="text-[10px] leading-none text-[#fbbf24]">★</span>)}
+                    </div>
+                    <div className="text-[8.5px] text-gray-800 leading-relaxed italic mb-2">
+                      &ldquo;Mike&apos;s team was at my house within the hour. Burst pipe in the middle of winter — fixed fast, fair price. I won&apos;t call anyone else.&rdquo;
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[8px] text-gray-500 font-medium">Jennifer T. · Chicago, IL</span>
+                      <span className="inline-flex items-center gap-1 bg-[#f0fdf4] border border-[#bbf7d0] rounded-full px-2 py-0.5">
+                        <span className="text-[6.5px] text-[#15803d] font-bold">✓ Verified Google Review</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* ── 7. Final CTA ── */}
+                  <div className="bg-[#111] px-4 py-5 text-center">
+                    <div className="text-[13px] font-extrabold text-white tracking-tight mb-1">Got a Plumbing Emergency?</div>
+                    <div className="text-[8.5px] text-gray-500 mb-3.5">Our licensed Chicago plumbers are ready to help.</div>
+                    <div className="bg-[#b91c1c] rounded-md py-2.5 cursor-pointer" style={{boxShadow:'0 2px 16px rgba(185,28,28,0.4)'}}>
+                      <span className="text-[10.5px] font-extrabold text-white tracking-wide">📞 Call Now — (555) 482-9921</span>
+                    </div>
+                  </div>
+
+                  {/* ── 8. Sticky mobile call bar (simulated) ── */}
+                  <div className="bg-[#b91c1c] px-4 py-2.5 flex items-center justify-center">
+                    <span className="text-[9.5px] font-extrabold text-white tracking-wide">📞 Tap to Call — (555) 482-9921</span>
+                  </div>
+
+                </div>
+              </div>
+              {/* caption */}
+              <div className="flex flex-wrap gap-2">
+                {['Mobile-friendly','Easy to update','Builds trust instantly','Drives more calls'].map(t => (
+                  <span key={t} className="text-[11px] text-green-700 bg-green-50 border border-green-100 rounded-full px-3 py-1">{t}</span>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </Reveal>
+
+        {/* bottom note */}
+        <Reveal delay={200}>
+          <p className="mt-10 text-center text-sm text-gray-400">
+            Both of these are the same plumbing business. One loses customers. One earns them.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
 
 function FaqSection() {
   const [open, setOpen] = useState(null)

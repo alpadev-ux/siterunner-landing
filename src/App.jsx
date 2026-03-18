@@ -216,10 +216,9 @@ export default function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <div className="min-h-screen font-sans text-gray-900 antialiased" style={{ background: '#080e1d' }}>
+    <div className="min-h-screen font-sans text-gray-900 antialiased" style={{ background: '#ffffff' }}>
 
-      {/* ── Single inset column — hero + all content share the same margins so rails are always clean ── */}
-      <div className="mx-3 md:mx-8 rounded-t-[2.75rem] md:rounded-t-[3.5rem] overflow-hidden">
+      <div className="overflow-hidden">
 
       {/* ── Hero (nav integrated) ─────────────────────────────────── */}
       <header
@@ -1860,9 +1859,9 @@ function WebsiteTransformation() {
                 </div>
               </div>
               {/* Outcome-focused negative chips */}
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 justify-center">
                 {['No phone number','20-item nav bar','No services listed','Wall of text'].map(t => (
-                  <span key={t} className="text-[10px] text-gray-400 bg-gray-50 border border-gray-200 rounded-md px-2.5 py-1.5 leading-none">{t}</span>
+                  <span key={t} className="text-[10px] text-gray-400 bg-gray-50 border border-gray-200 rounded-md px-2.5 py-1.5 leading-none text-center">{t}</span>
                 ))}
               </div>
             </div>
@@ -2061,9 +2060,9 @@ function WebsiteTransformation() {
                 </div>
               </div>
               {/* Outcome chips */}
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 justify-center">
                 {['Phone number in nav','Services at a glance','Reviews build trust','Clear call to action'].map(t => (
-                  <span key={t} className="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-md px-2.5 py-1.5 leading-none font-medium">{t}</span>
+                  <span key={t} className="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-md px-2.5 py-1.5 leading-none font-medium text-center">{t}</span>
                 ))}
               </div>
             </div>

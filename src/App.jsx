@@ -744,7 +744,7 @@ export default function App() {
               Your plan includes hosting, maintenance, and updates when you need them. We keep your site modern and reliable so you can focus on your business.
             </p>
           </Reveal>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {[
               { name: 'Essentials', price: '$99', note: 'For lean local businesses', highlighted: false,
                 features: ['Hosting and security', 'Ongoing care when you need it', 'Hours, pricing, services', 'Email support'] },
@@ -984,10 +984,10 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
 function PricingCard({ name, price, features, note, highlighted }) {
   return (
     <div
-      className={`relative rounded-2xl border p-7 flex flex-col transition-all duration-200 ${
+      className={`relative rounded-2xl border flex flex-col transition-all duration-200 ${
         highlighted
-          ? 'border-accent bg-white shadow-[0_16px_60px_-12px_rgb(13_148_136/0.35)] ring-2 ring-accent/20 md:-translate-y-2 hover:md:-translate-y-3 z-10'
-          : 'border-gray-200 bg-white shadow-[0_4px_20px_-4px_rgb(0,0,0,0.1)] hover:shadow-[0_12px_40px_-8px_rgb(0,0,0,0.14)] hover:border-gray-300 hover:-translate-y-1'
+          ? 'border-accent bg-white shadow-[0_16px_60px_-12px_rgb(13_148_136/0.35)] ring-2 ring-accent/20 z-10 pt-10 px-7 pb-7'
+          : 'border-gray-200 bg-white shadow-[0_4px_20px_-4px_rgb(0,0,0,0.1)] hover:shadow-[0_12px_40px_-8px_rgb(0,0,0,0.14)] hover:border-gray-300 p-7'
       }`}
     >
       {highlighted && (

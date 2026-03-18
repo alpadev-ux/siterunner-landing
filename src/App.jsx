@@ -1307,14 +1307,19 @@ function HeroChatSim() {
 
   function ApprovalChatSim({ active }) {
     const [shown, setShown] = useState(0)
+    const [loopKey, setLoopKey] = useState(0)
     const scrollRef = useRef(null)
 
     useEffect(() => {
       if (!active) { setShown(0); return }
+      setShown(0)
       const timers = APPROVAL_MSGS.map((msg, i) => setTimeout(() => setShown(i + 1), msg.delay))
-      const loop = setTimeout(() => setShown(0), APPROVAL_MSGS[APPROVAL_MSGS.length - 1].delay + 3500)
-      return () => { timers.forEach(clearTimeout); clearTimeout(loop) }
-    }, [active])
+      const restart = setTimeout(
+        () => setLoopKey(k => k + 1),
+        APPROVAL_MSGS[APPROVAL_MSGS.length - 1].delay + 3500
+      )
+      return () => { timers.forEach(clearTimeout); clearTimeout(restart) }
+    }, [active, loopKey])
 
     useEffect(() => {
       if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight

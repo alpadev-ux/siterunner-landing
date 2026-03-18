@@ -258,7 +258,7 @@ export default function App() {
 
 
         {/* ── integrated nav ── */}
-        <nav className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <nav className="relative z-10 max-w-6xl mx-auto px-8 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-0">
             <span className="font-bold text-2xl tracking-tight leading-none">
               <span className="text-white">Site</span><span className="text-teal-300" style={{ textShadow: '0 0 8px rgba(94,234,212,0.85)' }}>Upscale</span>
@@ -281,21 +281,14 @@ export default function App() {
           </div>
           <button
             onClick={() => scrollTo('free-offer')}
-            className="text-sm font-semibold border border-white/25 hover:border-white/50 hover:bg-white/10 text-white rounded-lg px-4 py-2 transition-all duration-200 backdrop-blur-sm"
+            className="text-sm font-semibold border border-white/25 hover:border-white/50 hover:bg-white/10 text-white rounded-lg px-5 py-2.5 transition-all duration-200 backdrop-blur-sm"
           >
             Get My Free Website
           </button>
         </nav>
 
         {/* ── hero content ── */}
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-28 md:pt-20 md:pb-36 text-center animate-fade-in">
-          <div className="flex justify-center mb-8">
-            <div className="hero-badge inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-3.5 py-1.5 text-xs font-semibold text-teal-300 backdrop-blur-sm text-center max-w-lg">
-              <span className="hero-badge-dot w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse flex-shrink-0" />
-              <span>For plumbers, contractors, restaurants, dentists &amp; local service businesses</span>
-            </div>
-          </div>
-
+        <div className="relative max-w-5xl mx-auto px-8 sm:px-6 lg:px-8 pt-16 pb-28 md:pt-20 md:pb-36 text-center animate-fade-in">
           <h1 className="text-[clamp(2.6rem,6vw,4.75rem)] font-extrabold text-white tracking-[-0.025em] leading-[1.05]">
             Outdated website?<br />
             <span className="text-teal-300">You may be losing customers.</span>
@@ -305,17 +298,17 @@ export default function App() {
             We rebuild it for free and keep it updated so you never have to worry about it again. One less thing on your mind.
           </p>
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center w-3/5 min-w-[200px] mx-auto sm:mx-0 sm:w-auto">
             <button
               onClick={() => scrollTo('free-offer')}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-gray-50 text-gray-900 font-bold px-8 py-4 text-base transition-all duration-200 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_36px_-6px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-gray-50 text-gray-900 font-bold px-4 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base whitespace-nowrap transition-all duration-200 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_36px_-6px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
             >
               Get My Free Website
               <span>{Icon.arrow}</span>
             </button>
             <button
               onClick={() => scrollTo('how-it-works')}
-              className="inline-flex items-center justify-center rounded-xl border-2 border-white/25 hover:border-white/50 hover:bg-white/10 text-white font-semibold px-8 py-4 text-base transition-all duration-200 hover:-translate-y-1 backdrop-blur-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-white/25 hover:border-white/50 hover:bg-white/10 text-white font-semibold px-4 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base whitespace-nowrap transition-all duration-200 hover:-translate-y-1 backdrop-blur-sm"
             >
               See How It Works
             </button>
@@ -333,7 +326,7 @@ export default function App() {
 
       {/* ── Process Storyrail ────────────────────────────────────── */}
       <section id="how-it-works" className="pt-16 pb-20 md:pt-20 md:pb-28 scroll-mt-8 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8">
 
           <ProcessStory />
 
@@ -590,7 +583,7 @@ export default function App() {
 
       {/* ── What We Handle ───────────────────────────────────────── */}
       <section className="pt-16 pb-20 md:pt-20 md:pb-28 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-8 sm:px-6 lg:px-8">
           <Reveal>
             <SectionLabel text="What's included" />
             <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
@@ -626,7 +619,7 @@ export default function App() {
 
       {/* ── Industries strip ─────────────────────────────────────── */}
       <section className="py-14 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-8 sm:px-6 lg:px-8 text-center">
           <Reveal>
             <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Trusted by local service businesses including…</p>
             <div className="flex flex-wrap justify-center gap-2.5">
@@ -647,7 +640,7 @@ export default function App() {
 
       {/* ── Pricing ──────────────────────────────────────────────── */}
       <section id="pricing" className="pt-16 pb-20 md:pt-20 md:pb-28 scroll-mt-8">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-8 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center mb-2">
               <span className="inline-block rounded-full border border-teal-200/60 bg-teal-50 px-4 py-1.5 text-xs font-semibold text-teal-700">
@@ -699,7 +692,7 @@ export default function App() {
 
       {/* ── Lead Capture Form ─────────────────────────────────────── */}
       <section id="free-offer" className="pt-16 pb-20 md:pt-20 md:pb-28 scroll-mt-8">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto px-8 sm:px-6 lg:px-8">
           <Reveal>
             <SectionLabel text="Free offer" />
             <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
@@ -716,7 +709,7 @@ export default function App() {
                 </li>
               ))}
             </ul>
-            <div className="mt-10 rounded-2xl border border-gray-200 bg-white p-6 sm:p-10 shadow-[0_8px_40px_-8px_rgb(0,0,0,0.1)]">
+            <div className="mt-10 rounded-2xl border border-gray-200 bg-white p-8 sm:p-10 shadow-[0_8px_40px_-8px_rgb(0,0,0,0.1)]">
               {formStatus === 'success' ? (
                 <div className="text-center py-8">
                   <div className="w-14 h-14 rounded-full bg-teal-50 text-teal-500 flex items-center justify-center mx-auto mb-4">
@@ -770,7 +763,7 @@ export default function App() {
                   <button
                     type="submit"
                     disabled={formStatus === 'loading'}
-                    className="mt-2 w-full rounded-xl bg-accent hover:bg-accent-hover text-white font-bold py-4 text-base transition-all duration-200 shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                    className="mt-2 w-3/5 min-w-[200px] mx-auto sm:mx-0 sm:w-full block rounded-xl bg-accent hover:bg-accent-hover text-white font-bold py-3.5 sm:py-4 px-4 sm:px-6 text-sm sm:text-base whitespace-nowrap transition-all duration-200 shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
                   >
                     {formStatus === 'loading' ? 'Sending…' : 'Request My Free Website'}
                   </button>
@@ -816,7 +809,7 @@ export default function App() {
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-accent/15 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[300px] bg-teal-500/10 rounded-full blur-[80px] pointer-events-none" />
 
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative max-w-3xl mx-auto px-8 sm:px-6 lg:px-8 text-center">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-widest text-teal-400/80 mb-5">One less thing to worry about</p>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-extrabold text-white tracking-[-0.02em] leading-tight">
@@ -826,15 +819,17 @@ export default function App() {
               We build it for free. We keep it updated. You run your business. No logins, no dashboards, no hassle.
             </p>
             {/* button with subtle teal glow behind it */}
-            <div className="relative mt-10 inline-flex justify-center">
-              <div className="absolute -inset-3 rounded-2xl bg-teal-400/20 blur-xl pointer-events-none" />
-              <button
-                onClick={() => scrollTo('free-offer')}
-                className="relative inline-flex items-center gap-2 rounded-xl bg-white text-gray-900 font-bold px-8 py-4 text-base transition-all duration-200 shadow-[0_8px_32px_-4px_rgb(0,0,0,0.4)] hover:bg-gray-50 hover:-translate-y-1 hover:shadow-[0_16px_48px_-4px_rgb(0,0,0,0.5)] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900"
-              >
-                Get My Free Website
-                <span>{Icon.arrow}</span>
-              </button>
+            <div className="relative mt-10 flex justify-center">
+              <div className="relative w-3/5 min-w-[200px] flex flex-col items-center">
+                <div className="absolute -inset-3 rounded-2xl bg-teal-400/20 blur-xl pointer-events-none" />
+                <button
+                  onClick={() => scrollTo('free-offer')}
+                  className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white text-gray-900 font-bold px-4 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base whitespace-nowrap transition-all duration-200 shadow-[0_8px_32px_-4px_rgb(0,0,0,0.4)] hover:bg-gray-50 hover:-translate-y-1 hover:shadow-[0_16px_48px_-4px_rgb(0,0,0,0.5)] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900"
+                >
+                  Get My Free Website
+                  <span>{Icon.arrow}</span>
+                </button>
+              </div>
             </div>
 
             {/* Footer info — sits below the CTA button */}
@@ -926,26 +921,28 @@ function PricingCard({ name, price, features, note, highlighted }) {
           </span>
         </div>
       )}
-      <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">{note}</p>
-      <h3 className="mt-2 text-xl font-bold text-gray-900">{name}</h3>
-      <p className="mt-4">
-        <span className="text-4xl font-extrabold text-gray-900">{price}</span>
-        <span className="text-gray-400 text-base font-medium">/mo</span>
-      </p>
+      <div className="text-center md:text-left">
+        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">{note}</p>
+        <h3 className="mt-2 text-xl font-bold text-gray-900">{name}</h3>
+        <p className="mt-4">
+          <span className="text-4xl font-extrabold text-gray-900">{price}</span>
+          <span className="text-gray-400 text-base font-medium">/mo</span>
+        </p>
+      </div>
       <div className="my-6 border-t border-gray-100" />
-      <ul className="space-y-3 flex-1">
+      <ul className="space-y-3 flex-1 text-center md:text-left">
         {features.map((f, i) => (
-          <li key={i} className="flex items-start gap-2.5 text-gray-600 text-sm leading-relaxed">
-            <span className={`mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${highlighted ? 'bg-accent text-white' : 'bg-gray-100 text-gray-500'}`}>
+          <li key={i} className="flex items-center justify-center gap-2.5 md:justify-start md:items-start text-gray-600 text-sm leading-relaxed">
+            <span className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${highlighted ? 'bg-accent text-white' : 'bg-gray-100 text-gray-500'}`}>
               {Icon.check}
             </span>
-            {f}
+            <span>{f}</span>
           </li>
         ))}
       </ul>
       <button
         onClick={() => document.getElementById('free-offer')?.scrollIntoView({ behavior: 'smooth' })}
-        className={`mt-8 w-full rounded-xl py-3.5 text-sm font-bold transition-all duration-200 ${
+        className={`mt-8 w-3/5 min-w-[200px] mx-auto sm:mx-0 sm:w-full block rounded-xl py-3.5 px-4 sm:px-6 text-sm font-bold whitespace-nowrap transition-all duration-200 ${
           highlighted
             ? 'bg-accent hover:bg-accent-hover text-white shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-0.5'
             : 'bg-gray-100 hover:bg-gray-200 text-gray-800 hover:-translate-y-0.5'
@@ -1431,8 +1428,8 @@ function HeroChatSim() {
     const [ref, visible] = useInView(0.2)
     return (
       <div>
-        <div className="mb-6">
-          <div className="flex items-center gap-3 mb-4">
+        <div className="mb-6 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <span className={`w-9 h-9 rounded-full border-2 flex items-center justify-center text-sm font-extrabold tracking-tight flex-shrink-0 ${
               stepIndex === 2 ? 'border-teal-500 bg-teal-50 text-teal-600' : 'border-gray-900 bg-gray-900 text-white'
             }`}>{step.n}</span>
@@ -1440,7 +1437,7 @@ function HeroChatSim() {
           </div>
           <h3 className="text-2xl font-extrabold text-gray-900 tracking-[-0.02em] mb-3">{step.title}</h3>
           <p className="text-gray-500 leading-relaxed text-sm mb-5">{step.body}</p>
-          <ul className="space-y-2">
+          <ul className="space-y-2 flex flex-col items-center">
             {step.bullets.map(b => (
               <li key={b} className="flex items-center gap-2.5 text-sm text-gray-600">
                 <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${stepIndex === 2 ? 'bg-teal-500' : 'bg-gray-400'}`} />
@@ -1638,7 +1635,7 @@ function HeroChatSim() {
 
             {/* Who it's for — locked in the sticky panel, always visible while scrolling steps */}
             <div className="flex-shrink-0 border-t border-gray-100 mt-5 pt-5 pb-6 bg-white">
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8">
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-4">Built for local business owners who…</p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {[
@@ -1719,7 +1716,7 @@ const FAQS = [
 function WebsiteTransformation() {
   return (
     <section className="pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8">
         <Reveal>
           <SectionLabel text="Before and after" />
           <h2 className="mt-5 text-[clamp(1.75rem,3vw,2.4rem)] font-extrabold text-gray-900 tracking-[-0.02em] text-center leading-tight">
@@ -2112,7 +2109,7 @@ function FaqSection() {
   const [open, setOpen] = useState(null)
   return (
     <section className="pt-16 pb-20 md:pt-20 md:pb-28 bg-white">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto px-8 sm:px-6 lg:px-8">
         <Reveal>
           <SectionLabel text="FAQ" />
           <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">

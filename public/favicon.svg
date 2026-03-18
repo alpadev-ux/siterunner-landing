@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#0d9488"/><path d="M8 12h16v2H8v-2zm0 4h12v2H8v-2zm0 4h10v2H8v-2z" fill="white"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -6 28 32" fill="none">
+  <rect x="-2" y="-6" width="28" height="32" rx="5" fill="#0f172a"/>
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow)">
+    <path d="M2,1 L2,21 L6,17 L9,24 L12,23 L9,16 L15,16 Z" fill="#5eead4" stroke="rgba(255,255,255,0.45)" stroke-width="1" stroke-linejoin="round"/>
+    <line x1="17" y1="-1.5" x2="17" y2="3.5" stroke="#5eead4" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="14.5" y1="1" x2="19.5" y2="1" stroke="#5eead4" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="21" y1="5" x2="21" y2="9" stroke="#5eead4" stroke-width="1" stroke-linecap="round"/>
+    <line x1="19" y1="7" x2="23" y2="7" stroke="#5eead4" stroke-width="1" stroke-linecap="round"/>
+  </g>
+</svg>

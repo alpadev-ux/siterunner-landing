@@ -105,21 +105,21 @@ const Icon = {
 /* ─────────────────── industry typewriter component ─────────────────── */
 
 const INDUSTRIES = [
+  'Plumbing',
+  'HVAC',
+  'Dental',
   'Restaurant',
-  'Real Estate',
-  'Law Firm',
-  'Dental Practice',
   'Hair Salon',
   'Auto Shop',
-  'Gym',
-  'Bakery',
-  'Plumbing',
-  'Yoga Studio',
-  'Photography',
-  'Boutique',
-  'Veterinary',
+  'Contracting',
   'Landscaping',
+  'Law Firm',
   'Chiropractic',
+  'Bakery',
+  'Veterinary',
+  'Photography',
+  'Yoga Studio',
+  'Boutique',
 ]
 
 function IndustryTypewriter() {
@@ -216,7 +216,10 @@ export default function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <div className="min-h-screen font-sans bg-white text-gray-900 antialiased">
+    <div className="min-h-screen font-sans text-gray-900 antialiased" style={{ background: '#080e1d' }}>
+
+      {/* ── Single inset column — hero + all content share the same margins so rails are always clean ── */}
+      <div className="mx-3 md:mx-8 rounded-t-[2.75rem] md:rounded-t-[3.5rem] overflow-hidden">
 
       {/* ── Hero (nav integrated) ─────────────────────────────────── */}
       <header
@@ -253,36 +256,34 @@ export default function App() {
             onClick={() => scrollTo('free-offer')}
             className="text-sm font-semibold border border-white/25 hover:border-white/50 hover:bg-white/10 text-white rounded-lg px-4 py-2 transition-all duration-200 backdrop-blur-sm"
           >
-            Get free website
+            Get My Free Website
           </button>
         </nav>
 
         {/* ── hero content ── */}
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-28 md:pt-20 md:pb-36 text-center animate-fade-in">
-          <div className="hero-badge inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-3.5 py-1.5 text-xs font-semibold text-teal-300 mb-8 backdrop-blur-sm">
-            <span className="hero-badge-dot w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
-            Free websites for any business
+          <div className="flex justify-center mb-8">
+            <div className="hero-badge inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-3.5 py-1.5 text-xs font-semibold text-teal-300 backdrop-blur-sm text-center max-w-lg">
+              <span className="hero-badge-dot w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse flex-shrink-0" />
+              <span>For plumbers, contractors, restaurants, dentists &amp; local service businesses</span>
+            </div>
           </div>
 
-          <h1 className="text-[clamp(3rem,6.5vw,5rem)] font-extrabold text-white tracking-[-0.025em] leading-[1.03]">
-            We Build Your<br />
-            <IndustryTypewriter />
-            <br />
-            <span className="text-white">Website for Free</span>
+          <h1 className="text-[clamp(2.6rem,6vw,4.75rem)] font-extrabold text-white tracking-[-0.025em] leading-[1.05]">
+            Outdated website?<br />
+            <span className="text-teal-300">You may be losing customers.</span>
           </h1>
 
-          <p className="mt-8 text-base sm:text-xl md:text-2xl max-w-xl sm:max-w-2xl mx-auto leading-[1.7] sm:leading-[1.75]" style={{ color: 'rgba(255,255,255,0.75)' }}>
-            We create or refresh your website at no cost.<br />
-            Happy with it? Keep it for a small monthly fee.<br />
-            Need a change? Just send us a text.
+          <p className="mt-8 text-base sm:text-xl md:text-[1.35rem] max-w-xl sm:max-w-2xl mx-auto leading-[1.7] sm:leading-[1.75]" style={{ color: 'rgba(255,255,255,0.82)' }}>
+            We rebuild it for free and keep it updated so you never have to worry about it again. One less thing on your mind.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => scrollTo('free-offer')}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-gray-50 text-gray-900 font-bold px-8 py-4 text-base transition-all duration-200 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_36px_-6px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-gray-50 text-gray-900 font-bold px-8 py-4 text-base transition-all duration-200 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_36px_-6px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
             >
-              Get Your Free Website
+              Get My Free Website
               <span>{Icon.arrow}</span>
             </button>
             <button
@@ -292,12 +293,19 @@ export default function App() {
               See How It Works
             </button>
           </div>
+          <p className="mt-8 text-xs font-medium text-white/50">
+            No credit card required · No obligation
+          </p>
         </div>
+
       </header>
 
 
+      {/* ── Card 1 — white, floats up over hero ── */}
+      <div className="-mt-14 relative z-10 rounded-t-[4rem] overflow-hidden bg-white" style={{ boxShadow: '0 -8px 60px rgba(0,0,0,0.35)', paddingBottom: '6rem' }}>
+
       {/* ── Process Storyrail ────────────────────────────────────── */}
-      <section id="how-it-works" className="pb-0 scroll-mt-8 bg-white">
+      <section id="how-it-works" className="pt-16 pb-20 md:pt-20 md:pb-28 scroll-mt-8 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <ProcessStory />
@@ -336,7 +344,7 @@ export default function App() {
                         n: '01',
                         icon: Icon.globe,
                         title: 'We build your website for free',
-                        body: 'Need a brand new site or a complete refresh of what you already have? We design and code a real, professional website built specifically for your business - at zero upfront cost. No templates, no page builders, no DIY.',
+                        body: 'Brand new or a complete rebuild. We design and code a real, professional website built for your business at zero upfront cost. No templates, no page builders, no DIY.',
                         tag: '$0 upfront. Always.',
                         lit: false,
                       },
@@ -344,15 +352,15 @@ export default function App() {
                         n: '02',
                         icon: Icon.check,
                         title: 'Only pay if you love it',
-                        body: "Once your site is ready, you review it. Happy with the result? Keep it live for a simple monthly fee. Not quite right? Walk away with no charge and no hard feelings. You only pay when you're genuinely satisfied.",
+                        body: "We send you a preview link. Browse it on your phone. Happy? Your monthly plan begins. Not right? Walk away with no charge and no contract. You only pay when you approve.",
                         tag: 'Zero risk to you.',
                         lit: false,
                       },
                       {
                         n: '03',
                         icon: Icon.chat,
-                        title: 'Text us changes anytime',
-                        body: 'Hours changed? New service or promotion? Special event coming up? Just send us a text. We handle the update quickly - usually within the hour. No logins, no admin panels, no back-and-forth.',
+                        title: 'Never think about your website again.',
+                        body: 'No logins, no dashboards, no waiting on agencies. Send us a message and we handle it, usually within the hour. Your site stays current. You stay focused.',
                         tag: 'Usually within 1 hour.',
                         lit: true,
                       },
@@ -414,19 +422,19 @@ export default function App() {
                     {
                       n: '01', icon: Icon.globe, lit: false,
                       title: 'We build your website for free',
-                      body: 'Brand new or a full refresh - we design and code a real, professional site at zero upfront cost. No templates, no DIY.',
+                      body: 'Brand new or a full rebuild. We design and code a real, professional site at zero upfront cost. No templates, no DIY.',
                       tag: '$0 upfront. Always.',
                     },
                     {
                       n: '02', icon: Icon.check, lit: false,
                       title: 'Only pay if you love it',
-                      body: "Review the finished site. Happy with it? Keep it live for a simple monthly fee. Not right for you? Walk away, no charge.",
+                      body: "We send you a preview link. Love it? Your monthly plan starts. Not right for you? Walk away, no charge, no contract.",
                       tag: 'Zero risk to you.',
                     },
                     {
                       n: '03', icon: Icon.chat, lit: true,
-                      title: 'Text us changes anytime',
-                      body: 'Hours, services, promotions, events - just send a text. We handle the update fast, usually within the hour.',
+                      title: 'Never think about your website again.',
+                      body: 'No logins, no dashboards, no waiting. Send a message and we handle it. You never have to touch your site.',
                       tag: 'Usually within 1 hour.',
                     },
                   ].map(({ n, icon, title, body, tag, lit }, i) => (
@@ -485,19 +493,19 @@ export default function App() {
               <div className="px-8 md:px-14 pt-10 pb-10 md:pb-14 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-14">
                 {/* Left: micro-narrative */}
                 <div className="lg:flex-1">
-                  <h3 className="text-xl md:text-2xl font-extrabold text-white tracking-[-0.015em] mb-5 leading-snug">
-                    Requesting a change takes<br />about 10 seconds
+                  <h3 className="text-xl md:text-2xl font-extrabold text-white tracking-[-0.015em] mb-3 leading-snug">
+                    No logins. No dashboards.<br />No waiting on agencies.
                   </h3>
-                  <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">
-                    Business owners text things like:
+                  <p className="text-white/50 text-sm mb-5 leading-relaxed">
+                    Send a message and we handle it, usually within the hour. You never have to touch your site or chase anyone for changes.
                   </p>
                   <div className="space-y-3">
                     {[
                       { label: 'Update pricing or services', example: '"New haircut price is $45"' },
                       { label: 'Change business hours', example: '"Closed Mondays now"' },
-                      { label: 'Add holiday notices', example: '"Closed Christmas Day"' },
+                      { label: 'Add holiday closures', example: '"Closed Christmas Day"' },
                       { label: 'Post a new promotion', example: '"20% off this weekend only"' },
-                      { label: 'Swap photos', example: '"New storefront photo attached"' },
+                      { label: 'Swap out photos', example: '"New storefront photo attached"' },
                     ].map(({ label, example }) => (
                       <div key={label} className="flex items-start gap-3">
                         <span className="mt-0.5 w-4 h-4 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center flex-shrink-0">
@@ -540,34 +548,42 @@ export default function App() {
         </div>
       </section>
 
+      </div>{/* end Card 1 */}
 
+      {/* ── Card 1b — pure white, stacks over Card 1 ── */}
+      <div className="relative z-[15] -mt-16 rounded-t-[4rem] overflow-hidden bg-white" style={{ boxShadow: '0 -20px 60px rgba(0,0,0,0.18)', paddingBottom: '6rem' }}>
 
       {/* ── Before / After Visual Mockup ──────────────────────────── */}
       <WebsiteTransformation />
 
+      </div>{/* end Card 1b */}
+
+      {/* ── Card 1c — white, stacks over Card 1b ── */}
+      <div className="relative z-[18] -mt-16 rounded-t-[4rem] overflow-hidden bg-white" style={{ boxShadow: '0 -20px 60px rgba(0,0,0,0.18)', paddingBottom: '6rem' }}>
+
       {/* ── What We Handle ───────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white border-t border-gray-100">
+      <section className="pt-16 pb-20 md:pt-20 md:pb-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionLabel text="What's included" />
             <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
-              We handle everything
+              We handle it. You don't.
             </h2>
             <p className="mt-4 text-center text-gray-500 max-w-md mx-auto leading-relaxed">
-              You never need to open a website builder or deal with edits yourself.
+              Hosting, maintenance, and care. Your site stays current and reliable so you never have to think about it.
             </p>
           </Reveal>
           <Reveal delay={120}>
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { icon: Icon.clock,  label: 'Hours updates' },
-                { icon: Icon.tag,    label: 'Pricing changes' },
-                { icon: Icon.chat,   label: 'New promotions' },
-                { icon: Icon.globe,  label: 'New photos' },
-                { icon: Icon.check,  label: 'Service edits' },
-                { icon: Icon.user,   label: 'Seasonal banners' },
-                { icon: Icon.arrow,  label: 'Landing pages' },
-                { icon: Icon.clock,  label: 'Menu updates' },
+                { icon: Icon.clock,  label: 'Business hours' },
+                { icon: Icon.tag,    label: 'Pricing updates' },
+                { icon: Icon.chat,   label: 'Promotions' },
+                { icon: Icon.photo,  label: 'Photo swaps' },
+                { icon: Icon.check,  label: 'Service changes' },
+                { icon: Icon.user,   label: 'Seasonal content' },
+                { icon: Icon.arrow,  label: 'New sections' },
+                { icon: Icon.pencil, label: 'Menu updates' },
               ].map(({ icon, label }) => (
                 <div key={label} className="flex items-center gap-2.5 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3.5">
                   <span className="w-7 h-7 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center flex-shrink-0">
@@ -582,12 +598,12 @@ export default function App() {
       </section>
 
       {/* ── Industries strip ─────────────────────────────────────── */}
-      <section className="py-14 border-t border-gray-100" style={{ background: 'linear-gradient(180deg,#f8fafc 0%,#ffffff 100%)' }}>
+      <section className="py-14 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Built for local businesses like…</p>
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Trusted by local service businesses including…</p>
             <div className="flex flex-wrap justify-center gap-2.5">
-              {['Restaurants','Hair Salons','Plumbers','HVAC Companies','Dental Offices','General Contractors','Auto Shops','Yoga Studios','Law Firms','Photographers','Boutiques','Chiropractors','Landscapers','Bakeries','Veterinarians'].map(cat => (
+              {['Plumbers','HVAC Companies','General Contractors','Auto Shops','Dental Offices','Hair Salons','Restaurants','Chiropractors','Landscapers','Law Firms','Bakeries','Yoga Studios','Photographers','Boutiques','Veterinarians'].map(cat => (
                 <span key={cat} className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-600 hover:border-teal-300 hover:text-teal-700 transition-colors duration-150">
                   {cat}
                 </span>
@@ -597,28 +613,36 @@ export default function App() {
         </div>
       </section>
 
+      </div>{/* end Card 1c */}
+
+      {/* ── Card 2 — cool slate, stacks on top of Card 1c ── */}
+      <div className="relative z-20 -mt-16 rounded-t-[4rem] overflow-hidden" style={{ background: '#f1f5f9', boxShadow: '0 -20px 60px rgba(0,0,0,0.2)', paddingBottom: '6rem' }}>
+
       {/* ── Pricing ──────────────────────────────────────────────── */}
-      <section id="pricing" className="py-20 md:py-[7.5rem] scroll-mt-8" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)' }}>
+      <section id="pricing" className="pt-16 pb-20 md:pt-20 md:pb-28 scroll-mt-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center mb-2">
               <span className="inline-block rounded-full border border-teal-200/60 bg-teal-50 px-4 py-1.5 text-xs font-semibold text-teal-700">
-                Marketing agencies charge $1,500–$5,000/mo. SiteRunner doesn&apos;t.
+                Web agencies charge $1,500 to $5,000 per month. SiteRunner doesn&apos;t.
               </span>
             </div>
             <SectionLabel text="Pricing" className="mt-5" />
             <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
-              Simple Monthly Pricing
+              Pay monthly. Never think about your website again.
             </h2>
+            <p className="mt-4 text-center text-gray-500 max-w-xl mx-auto leading-relaxed">
+              Your plan includes hosting, maintenance, and updates when you need them. We keep your site modern and reliable so you can focus on your business.
+            </p>
           </Reveal>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
             {[
-              { name: 'Starter', price: '$99', note: 'Best for small businesses', highlighted: false,
-                features: ['Up to 2 website updates/mo', 'Email support', 'Small text or image edits'] },
+              { name: 'Essentials', price: '$99', note: 'For lean local businesses', highlighted: false,
+                features: ['Hosting and security', 'Ongoing care when you need it', 'Hours, pricing, services', 'Email support'] },
               { name: 'Standard', price: '$199', note: 'Most popular', highlighted: true,
-                features: ['Up to 6 website updates/mo', 'Content updates', 'Promo & event changes', 'Image swaps', 'Monthly improvement suggestions'] },
+                features: ['Hosting and security', 'Ongoing care and maintenance', 'Promos, events, new content', 'Photo and copy refreshes', 'Monthly check-in and suggestions'] },
               { name: 'Unlimited', price: '$399', note: 'For high-volume businesses', highlighted: false,
-                features: ['Unlimited small updates', 'Priority turnaround', 'Promo landing sections', 'Ongoing improvement support'] },
+                features: ['Hosting and security', 'Unlimited care requests', 'Priority turnaround', 'Seasonal sections and improvements'] },
             ].map(({ name, price, note, highlighted, features }, i) => (
               <Reveal key={name} delay={80 + i * 100}>
                 <PricingCard name={name} price={price} note={note} highlighted={highlighted} features={features} />
@@ -626,29 +650,39 @@ export default function App() {
             ))}
           </div>
           <Reveal delay={400}>
-            <p className="mt-10 text-center text-sm text-gray-400">
-              Large redesigns or rebuilds are quoted separately.
-            </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400 text-center">
+              <span>No contracts</span>
+              <span className="text-gray-200">·</span>
+              <span>Cancel anytime</span>
+              <span className="text-gray-200">·</span>
+              <span>Keep your domain</span>
+              <span className="text-gray-200">·</span>
+              <span>Review before you pay</span>
+              <span className="text-gray-200">·</span>
+              <span>No upfront payment required</span>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <FaqSection />
+      </div>{/* end Card 2 */}
+
+      {/* ── Card 3 — warm cream, stacks on top of Card 2 ── */}
+      <div className="relative z-30 -mt-16 rounded-t-[4rem] overflow-hidden" style={{ background: '#faf8f5', boxShadow: '0 -20px 60px rgba(0,0,0,0.17)', paddingBottom: '6rem' }}>
 
       {/* ── Lead Capture Form ─────────────────────────────────────── */}
-      <section id="free-offer" className="py-20 md:py-[7.5rem] scroll-mt-8" style={{ background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 40%)' }}>
+      <section id="free-offer" className="pt-16 pb-20 md:pt-20 md:pb-28 scroll-mt-8">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionLabel text="Free offer" />
             <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
-              Get Your Free Website
+              Get My Free Website
             </h2>
             <p className="mt-5 text-center text-gray-600 text-lg leading-relaxed">
-              We&apos;ll build or refresh your website at no cost. If you like it, keep it live for a small monthly fee.
+              We build your new site for free. Review it. Love it? It goes live and we keep it updated so you never have to worry about it again. No obligation.
             </p>
             <ul className="mt-8 flex flex-wrap justify-center gap-2.5">
-              {['Homepage cleanup', 'Better mobile layout', 'Stronger CTA', 'Cleaner service presentation'].map((item) => (
+              {['No upfront payment', 'Review before you pay', 'No contracts', 'Cancel anytime', 'Keep your domain'].map((item) => (
                 <li key={item} className="flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-xs font-semibold text-accent">
                   <span className="text-accent">{Icon.check}</span>
                   {item}
@@ -709,17 +743,30 @@ export default function App() {
                   <button
                     type="submit"
                     disabled={formStatus === 'loading'}
-                    className="mt-2 w-full rounded-xl bg-accent hover:bg-accent-hover text-white font-bold py-4 text-base transition-all duration-200 shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                    className="mt-2 w-full rounded-xl bg-accent hover:bg-accent-hover text-white font-bold py-4 text-base transition-all duration-200 shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
                   >
                     {formStatus === 'loading' ? 'Sending…' : 'Request My Free Website'}
                   </button>
-                  <p className="text-center text-xs text-gray-400 mt-3">No credit card. No commitment. Just a free look at your site.</p>
+                  <p className="text-center text-xs text-gray-400 mt-3">No credit card. No contract. No upfront payment. We build it, you decide.</p>
                 </form>
               )}
             </div>
           </Reveal>
         </div>
       </section>
+
+      </div>{/* end Card 3 */}
+
+      {/* ── Card 3b — white, stacks over Card 3 ── */}
+      <div className="relative -mt-16 rounded-t-[4rem] overflow-hidden bg-white" style={{ zIndex: 35, boxShadow: '0 -20px 60px rgba(0,0,0,0.17)', paddingBottom: '6rem' }}>
+
+      {/* ── FAQ ──────────────────────────────────────────────────── */}
+      <FaqSection />
+
+      </div>{/* end Card 3b */}
+
+      {/* ── Card 4 — dark, stacks on top of Card 3 ── */}
+      <div className="relative z-40 -mt-16 rounded-t-[4rem] overflow-hidden" style={{ background: 'linear-gradient(135deg, #020617 0%, #0f172a 30%, #0f766e 62%, #0f172a 84%, #020617 100%)', boxShadow: '0 -20px 60px rgba(0,0,0,0.18)' }}>
 
       {/* ── Final CTA ─────────────────────────────────────────────── */}
       <section
@@ -744,19 +791,19 @@ export default function App() {
 
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-widest text-teal-400/80 mb-5">Don&apos;t wait</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-teal-400/80 mb-5">One less thing to worry about</p>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-extrabold text-white tracking-[-0.02em] leading-tight">
-              Your Website Should Not<br />Feel Outdated
+              Never think about your<br />website again.
             </h2>
             <p className="mt-6 text-lg text-gray-300/85 leading-relaxed">
-              If your business is great in person, your website should reflect it.
+              We build it for free. We keep it updated. You run your business. No logins, no dashboards, no hassle.
             </p>
             {/* button with subtle teal glow behind it */}
             <div className="relative mt-10 inline-flex justify-center">
               <div className="absolute -inset-3 rounded-2xl bg-teal-400/20 blur-xl pointer-events-none" />
               <button
                 onClick={() => scrollTo('free-offer')}
-                className="relative inline-flex items-center gap-2 rounded-xl bg-white text-gray-900 font-bold px-8 py-4 text-base transition-all duration-200 shadow-[0_8px_32px_-4px_rgb(0,0,0,0.4)] hover:bg-gray-50 hover:-translate-y-1 hover:shadow-[0_16px_48px_-4px_rgb(0,0,0,0.5)]"
+                className="relative inline-flex items-center gap-2 rounded-xl bg-white text-gray-900 font-bold px-8 py-4 text-base transition-all duration-200 shadow-[0_8px_32px_-4px_rgb(0,0,0,0.4)] hover:bg-gray-50 hover:-translate-y-1 hover:shadow-[0_16px_48px_-4px_rgb(0,0,0,0.5)] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900"
               >
                 Get My Free Website
                 <span>{Icon.arrow}</span>
@@ -771,7 +818,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-bold text-white text-base">SiteRunner</p>
-            <p className="text-sm text-gray-500 mt-0.5">Professional websites for local businesses</p>
+            <p className="text-sm text-gray-500 mt-0.5">Website care for local businesses. You never have to think about it.</p>
           </div>
           <a href="mailto:hello@siterunner.example" className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
             hello@siterunner.example
@@ -779,6 +826,8 @@ export default function App() {
           <p className="text-sm text-gray-600">© {new Date().getFullYear()} SiteRunner. All rights reserved.</p>
         </div>
       </footer>
+      </div>{/* end Card 4 */}
+      </div>{/* end inset column */}
     </div>
   )
 }
@@ -869,7 +918,7 @@ function PricingCard({ name, price, features, note, highlighted }) {
             : 'bg-gray-100 hover:bg-gray-200 text-gray-800 hover:-translate-y-0.5'
         }`}
       >
-        Get started
+        Get My Free Website
       </button>
     </div>
   )
@@ -1422,18 +1471,18 @@ function HeroChatSim() {
     const STEPS = [
       {
         n: '01', title: 'We build your website for free',
-        body: 'Need a brand new site or a complete refresh? We design and code a real, professional website built for your business at zero upfront cost. No templates, no page builders, no DIY.',
-        bullets: ['Custom design for your business', 'Mobile-friendly from day one', 'Launched in days, not months', 'Zero upfront payment required'],
+        body: 'Fresh start or full rebuild. We design and code a real, professional site for your business at zero upfront cost. No templates, no DIY.',
+        bullets: ['Custom design for your business', 'Mobile-friendly from day one', 'Live in days, not months', 'No payment until you approve it'],
       },
       {
         n: '02', title: 'Only pay if you love it',
-        body: "Once your site is ready, we send you a preview link. Browse it on your phone, share it with your team. Happy? Your monthly plan begins. Not right? Walk away with no charge and no contracts.",
-        bullets: ['Review before you pay anything', 'Simple monthly fee, no contracts', 'Cancel anytime, no penalties', 'Keep your domain if you leave'],
+        body: "We send you a preview link. Browse it on your phone. Love it? Your monthly plan begins and we handle everything from there. Not right for you? Walk away. No charge.",
+        bullets: ['Review before you pay', 'No contracts, month to month', 'Cancel anytime', 'Your domain stays yours'],
       },
       {
-        n: '03', title: 'Request changes by text',
-        body: "Once live, updating your site is as simple as texting a friend. Send us what you need and we handle it fast - usually within the hour. No logins, no admin panels, no tech headaches.",
-        bullets: ['Service and pricing updates', 'Holiday hours and closures', 'New promotions and announcements', 'Photo swaps and content edits'],
+        n: '03', title: 'Never think about your website again.',
+        body: "No logins. No dashboards. No waiting days for an agency. Send us a message and we handle it, usually within the hour. Your site stays current and you stay focused on your business. That's the whole point.",
+        bullets: ['No logins or admin panels ever', 'No chasing agencies or waiting on quotes', 'Just send a message and it gets done', 'Hosting, maintenance, and peace of mind included'],
       },
     ]
 
@@ -1460,7 +1509,7 @@ function HeroChatSim() {
         <div
           ref={driverRef}
           className="hidden lg:block relative"
-          style={{ height: '170vh', marginTop: '0.5rem' }}
+          style={{ height: '1188px', marginTop: '0.5rem' }}
         >
           <div
             className="sticky top-0 flex flex-col bg-white overflow-hidden"
@@ -1470,17 +1519,17 @@ function HeroChatSim() {
             <div className="flex-shrink-0 pt-10 pb-2 text-center">
               <SectionLabel text="How it works" />
               <h2 className="mt-3 text-[clamp(2rem,3.5vw,3.25rem)] font-extrabold text-gray-900 tracking-[-0.025em] leading-[1.08]">
-                We Build Your Website for Free
+                Free to build. Then we take it from here.
               </h2>
-              <p className="mt-4 text-gray-500 max-w-2xl mx-auto leading-relaxed text-lg whitespace-nowrap">
-                Only pay if you like the result. After that, updates are as easy as sending us a text.
+              <p className="mt-4 text-gray-500 max-w-2xl mx-auto leading-relaxed text-lg text-center">
+                You only pay if you love it. After that, your website runs in the background. You never have to think about it.
               </p>
             </div>
 
             {/* Content row — natural height, does NOT flex-grow so the strip follows immediately below */}
             <div className="flex items-start gap-14 xl:gap-20 pt-6 pb-0">
             {/* Left: step descriptions — absolutely stacked, cross-fade between steps */}
-            <div className="w-[360px] xl:w-[400px] flex-shrink-0 relative flex flex-col" style={{ marginTop: '2rem' }}>
+            <div className="w-[360px] xl:w-[400px] flex-shrink-0 relative flex flex-col text-left" style={{ marginTop: '2rem' }}>
               {STEPS.map((step, i) => (
                 <div
                   key={i}
@@ -1552,15 +1601,15 @@ function HeroChatSim() {
             {/* Who it's for — locked in the sticky panel, always visible while scrolling steps */}
             <div className="flex-shrink-0 border-t border-gray-100 mt-5 pt-5 pb-6 bg-white">
               <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-4">Perfect for businesses that…</p>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-4">Built for local business owners who…</p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {[
-                    "Have an outdated website",
-                    "Don't want a website builder",
-                    "Can't afford agency fees",
-                    "Want someone to handle it",
-                    "Need edits without logging in",
-                    "Want a professional presence",
+                    "Don't want to manage a website",
+                    "Are tired of outdated sites losing trust",
+                    "Can't afford agency retainers",
+                    "Want it handled so they can run their business",
+                    "Never want to log in or chase someone for changes",
+                    "Want peace of mind, not another task",
                   ].map((item) => (
                     <div key={item} className="flex flex-col items-center justify-center gap-2 rounded-lg border border-gray-100 bg-gray-50/70 px-3 py-7 text-center min-h-[100px]">
                       <span className="w-5 h-5 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center flex-shrink-0">
@@ -1577,6 +1626,17 @@ function HeroChatSim() {
         </div>
 
         {/* Mobile: stacked steps with demos */}
+        <div className="lg:hidden">
+          <div className="text-center pt-10 pb-2">
+            <SectionLabel text="How it works" />
+            <h2 className="mt-3 text-[clamp(1.75rem,6vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.025em] leading-[1.1]">
+              Free to build. Then we take it from here.
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-xl mx-auto leading-relaxed text-base text-center px-2">
+              You only pay if you love it. After that, your website runs in the background. You never have to think about it.
+            </p>
+          </div>
+        </div>
         <div className="lg:hidden mt-10 space-y-14">
           {STEPS.map((step, i) => (
             <MobileStepItem key={i} step={step} stepIndex={i} />
@@ -1620,180 +1680,206 @@ const FAQS = [
 /* ───────────────── website transformation showcase ─────────────────── */
 function WebsiteTransformation() {
   return (
-    <section className="py-16 md:py-24 overflow-hidden" style={{ background: 'linear-gradient(180deg,#f8fafc 0%,#ffffff 100%)' }}>
+    <section className="pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <SectionLabel text="The transformation" />
-          <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
-            See the difference for yourself
+          <SectionLabel text="Before and after" />
+          <h2 className="mt-5 text-[clamp(1.75rem,3vw,2.4rem)] font-extrabold text-gray-900 tracking-[-0.02em] text-center leading-tight">
+            The difference between being overlooked<br className="hidden sm:block" /> and getting calls.
           </h2>
-          <p className="mt-4 text-center text-gray-500 max-w-xl mx-auto">
-            This is a real example of the kind of transformation we deliver — same business, completely different impression.
+          <p className="mt-5 text-center text-gray-500 max-w-lg mx-auto leading-relaxed text-[0.975rem]">
+            Same business. Same services. The only thing that changed was the{' '}
+            <span className="text-accent font-semibold">website</span>.
           </p>
         </Reveal>
 
         <Reveal delay={100}>
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-10 items-start">
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-[1fr_44px_1fr] gap-y-12 lg:gap-y-0 items-start">
 
             {/* ── BEFORE browser ─────────────────────────────────── */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                <span className="text-xs font-bold uppercase tracking-widest text-red-500">Before — typical outdated site</span>
+            <div className="flex flex-col gap-4 min-w-0">
+              <div className="flex items-center justify-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" />
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Before</p>
+                  <p className="text-[12px] font-medium text-gray-400 leading-snug">Outdated, hard to trust</p>
+                </div>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_-8px_rgba(0,0,0,0.18)] border border-gray-200" style={{ height: 560 }}>
-                {/* browser chrome */}
-                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#e8e8e8] border-b border-gray-300">
-                  <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                  <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                  <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                  <div className="flex-1 mx-3 rounded bg-white border border-gray-300 h-6 flex items-center px-2.5 text-[11px] text-gray-400">
+              {/* Faded, lower-shadow treatment to visually de-emphasize */}
+              <div className="rounded-2xl overflow-hidden border border-gray-200/70 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08)] w-full" style={{ height: 580, filter: 'saturate(0.5) brightness(0.85) contrast(0.88) blur(0.5px)' }}>
+                {/* browser chrome — greyed out, IE-era */}
+                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#e0e0e0] border-b border-gray-300">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#d0d0d0]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#d0d0d0]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#d0d0d0]" />
+                  <div className="flex-1 mx-3 rounded bg-white border border-gray-300 h-6 flex items-center px-2.5 text-[11px] text-gray-500">
                     www.mikesplumbing.net
                   </div>
                 </div>
-                {/* Nuzzo-style page — red outer bg, white centered content */}
-                <div className="bg-[#cc0000] p-[6px] h-full" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
-                  <div className="bg-white">
-                    {/* header row */}
-                    <div className="flex items-stretch border-b-2 border-gray-300">
-                      {/* logo box */}
-                      <div className="flex-1 flex items-center px-3 py-3 border-r border-gray-200">
-                        <div className="border-2 border-[#cc0000] px-3 py-2 text-center flex-shrink-0">
-                          <div className="text-[13px] font-extrabold text-[#cc0000] leading-tight tracking-wide">MIKE&apos;S</div>
-                          <div className="text-[11px] font-extrabold text-[#cc0000] leading-tight tracking-wide border-t border-[#cc0000] mt-1 pt-1">SEWER &amp; PLUMBING</div>
-                        </div>
-                        <div className="ml-3 text-[9px] italic text-gray-400" style={{ fontFamily: 'Georgia, serif' }}>Satisfied Customers Since 1991</div>
+                {/* page content — authentic 2004 local biz site */}
+                <div className="overflow-hidden" style={{ height: 'calc(100% - 44px)', fontFamily: 'Arial, Helvetica, sans-serif', background: '#c8daf0', backgroundImage: 'repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(255,255,255,0.25) 19px,rgba(255,255,255,0.25) 20px),repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(255,255,255,0.25) 19px,rgba(255,255,255,0.25) 20px)' }}>
+
+                  {/* ── HEADER: logo left, cluttered right ── */}
+                  <div className="flex items-stretch bg-white border-b-4 border-[#cc0000]">
+                    <div className="flex items-center px-2 py-2 gap-2 border-r-2 border-gray-300 flex-1">
+                      {/* WordArt-style logo */}
+                      <div className="border-2 border-[#cc0000] px-2 py-1 text-center flex-shrink-0" style={{ background: 'linear-gradient(180deg,#fff 0%,#ffe0e0 100%)', boxShadow: '2px 2px 0 #cc000044' }}>
+                        <div style={{ fontSize: 11, fontWeight: 900, color: '#cc0000', fontFamily: 'Arial Black, Arial, sans-serif', textShadow: '1px 1px 0 #88000066', letterSpacing: '0.05em' }}>MIKE&apos;S</div>
+                        <div style={{ fontSize: 7, fontWeight: 900, color: '#cc0000', fontFamily: 'Arial Black, Arial, sans-serif', borderTop: '1px solid #cc0000', marginTop: 1, paddingTop: 1, letterSpacing: '0.03em' }}>SEWER &amp; PLUMBING</div>
                       </div>
-                      {/* right info — phone buried, low contrast */}
-                      <div className="flex flex-col justify-center px-3 py-2 text-right flex-shrink-0">
-                        <div className="bg-black text-white text-[9px] font-bold italic px-2 py-1.5 mb-1.5 text-center leading-tight">
-                          Experience Ensures<br/>Reliability
-                        </div>
-                        <div className="text-[9px] text-gray-300">(555) 482-9921</div>
-                        <div className="text-[7px] text-gray-300 tracking-wide">free estimates</div>
+                      <div>
+                        <div style={{ fontSize: 7, fontStyle: 'italic', color: '#336699', fontFamily: 'Comic Sans MS, cursive' }}>Satisfied Customers Since 1991!</div>
+                        <div style={{ fontSize: 6, color: '#999', fontFamily: 'Comic Sans MS, cursive' }}>Chicago&apos;s Most Trusted Plumber</div>
                       </div>
                     </div>
-
-                    {/* nav bar — inconsistent sizes, some items cramped */}
-                    <div className="flex bg-[#1a1a1a] overflow-hidden">
-                      {[
-                        {n:'Home', s:'text-[9px]', bold: true},
-                        {n:'Plumbing Services', s:'text-[7.5px]'},
-                        {n:'Flood Control', s:'text-[8px]'},
-                        {n:'Sewer Repairs', s:'text-[8.5px]'},
-                        {n:'Remodeling', s:'text-[7px]'},
-                        {n:'About Us', s:'text-[9px]'},
-                        {n:'Reviews', s:'text-[8px]'},
-                        {n:'Contact', s:'text-[10px]'},
-                      ].map(({n,s,bold},i) => (
-                        <div key={n} className={`${s} px-2 py-2 cursor-pointer border-r border-gray-700 whitespace-nowrap flex-shrink-0 ${i===0 ? 'bg-[#cc0000] text-white font-bold' : 'text-[#dddddd]'} ${bold ? 'font-bold':''}`}>{n}</div>
-                      ))}
-                    </div>
-
-                    {/* body */}
-                    <div className="p-3">
-                      {/* hero — no photo, full width */}
-                      <div className="mb-3">
-                        <h1 className="text-[22px] font-bold text-black leading-tight mb-1" style={{ fontFamily: 'Times New Roman, Georgia, serif', letterSpacing: '-0.5px' }}>
-                          Chicago Plumbing,<br/>
-                          <span className="text-[16px] font-normal">Sewer &amp; Flood</span><br/>
-                          <span className="text-[19px]">Control Specialists</span>
-                        </h1>
-                        <hr className="border-gray-300 my-1.5" style={{ borderStyle: 'dashed' }} />
-                        <p className="text-[7.5px] text-[#333] leading-[1.3] mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
-                          Mike&apos;s Sewer &amp; Plumbing offers professional, experienced, and reliable plumber services for all homes, businesses, and industries in Chicago, IL and surrounding suburbs. We offer complete services for all your plumbing and sewer needs.
-                        </p>
-                        <p className="text-[8px] text-[#555] leading-[1.35]" style={{ fontFamily: 'Comic Sans MS, cursive' }}>
-                          Mike&apos;s Plumbing was started by Leo Mike in <u>1991</u>. Our family owned and operated business of <b>2 generations</b> is now operated by his son. Mike holds a City of Chicago Contractor &amp; Journeyman Plumber license, City of Chicago Drainlayers License, State of Illinois Public Health Plumbing Contractor license and Cook County Sewer, Water and Plumbing licenses.
-                        </p>
+                    {/* Right: badges only — phone deliberately hidden */}
+                    <div className="flex flex-col justify-center items-end px-2 py-1.5 gap-1 flex-shrink-0 bg-[#f0f0f0]">
+                      <div className="flex gap-1">
+                        <div className="border border-[#336699] px-1 py-0.5 text-center" style={{ background: '#e8f0ff', fontSize: 5, color: '#336699', fontWeight: 700, lineHeight: 1.2 }}>BBB<br/>A+</div>
+                        <div className="border border-[#cc8800] px-1 py-0.5 text-center" style={{ background: '#fff8e0', fontSize: 5, color: '#cc8800', fontWeight: 700, lineHeight: 1.2 }}>BEST<br/>2003</div>
+                        <div className="border border-[#558800] px-1 py-0.5 text-center" style={{ background: '#f0ffe0', fontSize: 5, color: '#558800', fontWeight: 700, lineHeight: 1.2 }}>TOP<br/>PICK</div>
                       </div>
-
-                      {/* random divider */}
-                      <div className="text-center text-[8px] text-[#cc0000] font-bold border-t border-b border-[#cc0000] py-1 mb-2 tracking-widest uppercase">
-                        * * * Our Services * * *
-                      </div>
-
-                      {/* 3-col services — no photos, links buried as plain low-contrast text */}
-                      <div className="grid grid-cols-3 gap-2">
-                        {[
-                          {
-                            t: 'Plumbing Installation and Repair',
-                            tSize: 'text-[10px]',
-                            links: [
-                              { anchor: 'Plumbing Installation and Repair', rest: ' – All fixtures including toilets, sinks, showers, bath tubs, water heaters, and more.' },
-                              { anchor: 'Rehab and Remodeling', rest: ' – Specializing in rehab and remodeling for all homes and businesses' },
-                            ]
-                          },
-                          {
-                            t: 'Flood Control',
-                            tSize: 'text-[8.5px]',
-                            links: [
-                              { anchor: 'Flood Control', rest: ' – Lifetime guaranteed to prevent backup from city sewer mains.' },
-                              { anchor: 'Water Services', rest: ' – Trenchless water line installation is available for new water service without digging into your yard.' },
-                            ]
-                          },
-                          {
-                            t: 'Sewer Repair',
-                            tSize: 'text-[11px]',
-                            links: [
-                              { anchor: 'Sewer Repairs', rest: ' – Power rodding, video inspection, sewer pipe location, and cleanout installation.' },
-                            ]
-                          },
-                        ].map(({t,tSize,links}) => (
-                          <div key={t} className="border border-gray-300 p-1">
-                            <div className={`${tSize} font-bold text-black mb-0.5 leading-tight`}>{t}</div>
-                            {links.map(({anchor,rest}) => (
-                              <p key={anchor} className="text-[7.5px] leading-snug mb-0.5 text-gray-400">
-                                <span>{anchor}</span>
-                                <span>{rest}</span>
-                              </p>
-                            ))}
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* NEW badge — faded */}
-                      <div className="mt-2 text-right">
-                        <span className="text-[7px] text-gray-300 border border-gray-200 px-2 py-0.5">NEW! Now offering Remodeling services - call for details</span>
-                      </div>
-                    </div>
-
-                    {/* footer — all contact info faded */}
-                    <div className="bg-[#eeeeee] border-t-2 border-gray-300 px-4 py-2.5 grid grid-cols-3 gap-2 text-center">
-                      {[
-                        {sym:'&#9742;', t:'CONTACT US', sub:'(555) 482-9921'},
-                        {sym:'&#8962;', t:'Address', sub:'3819 W. 40th St. Chicago IL'},
-                        {sym:'&#10003;', t:'SERVICE AREA', sub:'Cook & DuPage County'},
-                      ].map(({sym,t,sub}) => (
-                        <div key={t}>
-                          <div className="text-[12px] text-gray-300" dangerouslySetInnerHTML={{ __html: sym }} />
-                          <div className="text-[8px] text-gray-300 uppercase">{t}</div>
-                          <div className="text-[7px] text-gray-300">{sub}</div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="bg-white border-t border-gray-200 px-3 py-1.5 flex items-center justify-between">
-                      <div className="text-[7px] text-gray-300">Copyright &copy; 2011 Mike&apos;s Plumbing LLC | All Rights Reserved</div>
-                      <div className="text-[7px] text-gray-300 font-mono">Visits: 004,872</div>
+                      <div style={{ fontSize: 5, color: '#bbb', fontStyle: 'italic' }}>webmaster@mikesplumbing.net</div>
                     </div>
                   </div>
+
+                  {/* ── NAV: 20 items, overcrowded, inconsistent sizes ── */}
+                  <div className="flex flex-wrap bg-[#1a3a6a] border-b-2 border-[#336699]">
+                    {[
+                      {n:'Home',            s:9,   bold:true,  active:true},
+                      {n:'Plumbing',        s:7,   bold:false, active:false},
+                      {n:'Drain Cleaning',  s:6,   bold:false, active:false},
+                      {n:'Flood Control',   s:6.5, bold:false, active:false},
+                      {n:'Sewer Repair',    s:7,   bold:false, active:false},
+                      {n:'Water Heaters',   s:6,   bold:false, active:false},
+                      {n:'Gas Lines',       s:6.5, bold:false, active:false},
+                      {n:'Remodeling',      s:6,   bold:false, active:false},
+                      {n:'Bathroom',        s:6.5, bold:false, active:false},
+                      {n:'Kitchen',         s:6,   bold:false, active:false},
+                      {n:'Commercial',      s:6,   bold:false, active:false},
+                      {n:'Emergency',       s:7,   bold:true,  active:false},
+                      {n:'Free Estimates',  s:6,   bold:false, active:false},
+                      {n:'Coupons',         s:6.5, bold:false, active:false},
+                      {n:'Testimonials',    s:6,   bold:false, active:false},
+                      {n:'Gallery',         s:6.5, bold:false, active:false},
+                      {n:'FAQ',             s:6,   bold:false, active:false},
+                      {n:'Blog',            s:6,   bold:false, active:false},
+                      {n:'About Us',        s:6.5, bold:false, active:false},
+                      {n:'Contact!!!',      s:8,   bold:true,  active:false},
+                    ].map(({n,s,bold,active}) => (
+                      <div key={n} style={{ fontSize: s, padding: '4px 4px', borderRight: '1px solid #336699', whiteSpace: 'nowrap', flexShrink: 0, background: active ? '#cc0000' : 'transparent', color: active ? '#fff' : '#aaccff', fontWeight: bold ? 900 : 400, fontFamily: bold ? 'Arial Black, Arial, sans-serif' : 'Arial, sans-serif' }}>{n}</div>
+                    ))}
+                  </div>
+
+                  {/* ── Static promo strip (no animation) ── */}
+                  <div style={{ background: '#ffff99', borderBottom: '2px solid #cccc00', padding: '2px 6px', fontSize: 7, fontWeight: 700, color: '#cc0000', fontFamily: 'Comic Sans MS, cursive', textAlign: 'center', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
+                    *** CALL TODAY FOR A FREE ESTIMATE! *** 30+ YEARS EXPERIENCE *** LICENSED &amp; INSURED ***
+                  </div>
+
+                  {/* ── BODY: 2-col, left main + right sidebar ── */}
+                  <div className="flex bg-white" style={{ gap: 0 }}>
+
+                    {/* Left main */}
+                    <div className="flex-1 p-2" style={{ borderRight: '1px dashed #cccccc' }}>
+                      <h1 style={{ fontFamily: 'Times New Roman, Georgia, serif', fontSize: 17, fontWeight: 700, color: '#000080', lineHeight: 1.1, marginBottom: 4, textShadow: '1px 1px 2px #cccccc' }}>
+                        Chicago Plumbing,<br/>
+                        <span style={{ fontSize: 12, fontWeight: 400, color: '#333' }}>Sewer &amp; Flood</span><br/>
+                        <span style={{ fontSize: 14, color: '#cc0000' }}>Control Specialists</span>
+                      </h1>
+                      <hr style={{ borderStyle: 'dashed', borderColor: '#cc0000', margin: '4px 0' }} />
+
+                      <p style={{ fontSize: 6.5, color: '#444', lineHeight: 1.3, marginBottom: 4, fontFamily: 'Arial, sans-serif' }}>
+                        Mike&apos;s Sewer &amp; Plumbing offers <b>professional</b>, experienced, and reliable plumber services for ALL homes, businesses, and industries in Chicago, IL and surrounding suburbs!! We offer <u>complete services</u> for all your plumbing and sewer needs.
+                      </p>
+                      <p style={{ fontSize: 6.5, color: '#555', lineHeight: 1.3, marginBottom: 4, fontFamily: 'Comic Sans MS, cursive' }}>
+                        Started by <b>Leo Mike in 1991</b>, our family-owned business is now <u>2 generations</u> strong!! Mike holds a City of Chicago Contractor license, Journeyman Plumber license, Drainlayers License, State of Illinois Public Health Plumbing license and Cook County licenses.
+                      </p>
+
+                      <p style={{ fontSize: 6.5, color: '#444', lineHeight: 1.3, marginBottom: 3, fontFamily: 'Arial, sans-serif' }}>
+                        We are a <u>fully licensed</u> and insured plumbing contractor serving the greater Chicagoland area since 1991. Our technicians are trained professionals who take pride in their work. We service all makes and models of plumbing systems and fixtures for both residential and commercial clients throughout Cook County and surrounding areas.
+                      </p>
+                      <p style={{ fontSize: 6.5, color: '#555', lineHeight: 1.3, marginBottom: 3, fontFamily: 'Comic Sans MS, cursive' }}>
+                        To find out more about our services please <u>click here</u> or navigate to the appropriate page using the menu above. For questions about pricing, availability, or scheduling please use our <u>contact form</u> or send an email to webmaster@mikesplumbing.net and someone will get back to you within 3-5 business days.
+                      </p>
+                      <p style={{ fontSize: 6, color: '#777', lineHeight: 1.3, fontFamily: 'Arial, sans-serif' }}>
+                        <i>Note: This site is best viewed in Internet Explorer. Some features may not work correctly in other browsers. If you are having trouble viewing this page please adjust your screen resolution to 800x600.</i>
+                      </p>
+                    </div>
+
+                    {/* Right sidebar */}
+                    <div style={{ width: 80, padding: 4, display: 'flex', flexDirection: 'column', gap: 4, background: '#eef4ff', flexShrink: 0 }}>
+                      {/* Blurry clip-art image */}
+                      <div style={{ border: '2px solid #aaaaaa', overflow: 'hidden', background: '#ddd' }}>
+                        <div style={{ fontSize: 5, color: '#999', textAlign: 'center', padding: '1px 0', background: '#cccccc', borderBottom: '1px solid #aaa', fontFamily: 'Arial, sans-serif' }}>Our Work</div>
+                        <div style={{ height: 44, backgroundImage: 'url(https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=200&q=30)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(1.5px) saturate(0.6) contrast(0.8)' }} />
+                      </div>
+                      {/* Under construction */}
+                      <div style={{ border: '2px dashed #ff8800', background: '#fff8e0', padding: '3px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 9 }}>🚧</div>
+                        <div style={{ fontSize: 5.5, fontWeight: 700, color: '#cc6600', fontFamily: 'Comic Sans MS, cursive', lineHeight: 1.2 }}>Under<br/>Construction!</div>
+                        <div style={{ fontSize: 5, color: '#999', marginTop: 1 }}>New pages coming soon</div>
+                      </div>
+                      {/* Visit counter */}
+                      <div style={{ border: '1px solid #999', background: '#ffffff', padding: '3px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 5.5, color: '#666', fontFamily: 'Comic Sans MS, cursive', marginBottom: 1 }}>You are visitor:</div>
+                        <div style={{ fontSize: 10, fontWeight: 900, color: '#000080', fontFamily: 'Courier New, monospace', letterSpacing: '0.1em' }}>004,872</div>
+                      </div>
+                      {/* Free estimate box */}
+                      <div style={{ border: '2px solid #cc0000', background: '#ffe8e8', padding: '3px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 6, fontWeight: 700, color: '#cc0000', fontFamily: 'Comic Sans MS, cursive', lineHeight: 1.3 }}>FREE<br/>Estimates!</div>
+                        <div style={{ fontSize: 5.5, color: '#333', marginTop: 1 }}>Call or email us today</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* ── FOOTER ── */}
+                  <div style={{ background: '#dddddd', borderTop: '3px double #999999', padding: '4px 8px' }}>
+                    <div className="grid grid-cols-3 gap-1 text-center mb-1">
+                      {[
+                        {t:'CONTACT US', sub:'(555) 482-9921'},
+                        {t:'ADDRESS', sub:'3819 W. 40th St.'},
+                        {t:'SERVICE AREA', sub:'Cook & DuPage Co.'},
+                      ].map(({t,sub}) => (
+                        <div key={t}>
+                          <div style={{ fontSize: 6, color: '#666', fontWeight: 700, textTransform: 'uppercase' }}>{t}</div>
+                          <div style={{ fontSize: 5.5, color: '#888' }}>{sub}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 5, color: '#aaa', borderTop: '1px solid #bbb', paddingTop: 2 }}>
+                      <span>Copyright &copy; 2004 Mike&apos;s Plumbing LLC | All Rights Reserved</span>
+                      <span>Best viewed in Internet Explorer 6 at 800x600</span>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-              {/* caption */}
-              <div className="flex flex-wrap gap-2">
-                {['No mobile support','Impossible to update','Drives customers away','Looks abandoned'].map(t => (
-                  <span key={t} className="text-[11px] text-red-500 bg-red-50 border border-red-100 rounded-full px-3 py-1">{t}</span>
+              {/* Outcome-focused negative chips */}
+              <div className="flex flex-wrap gap-2 justify-center">
+                {['No phone number','20-item nav bar','No services listed','Wall of text'].map(t => (
+                  <span key={t} className="text-[10px] text-gray-400 bg-gray-50 border border-gray-200 rounded-md px-2.5 py-1.5 leading-none">{t}</span>
                 ))}
               </div>
             </div>
 
-            {/* ── AFTER browser ──────────────────────────────────── */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
-                <span className="text-xs font-bold uppercase tracking-widest text-teal-600">After — SiteRunner rebuild</span>
+            {/* ── Arrow — larger, centered ── */}
+            <div className="hidden lg:flex flex-col items-center justify-center" style={{ paddingTop: 260 }}>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" className="text-gray-300">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+
+            {/* ── AFTER browser — more prominent ─────────────────── */}
+            <div className="flex flex-col gap-4 min-w-0">
+              <div className="flex items-center justify-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0" />
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-900">After</p>
+                  <p className="text-[12px] font-semibold text-gray-900 leading-snug">SiteRunner rebuild</p>
+                </div>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_-8px_rgba(0,0,0,0.18)] border border-gray-200" style={{ height: 560 }}>
+              {/* Stronger shadow — visually elevated */}
+              <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-[0_20px_70px_-8px_rgba(0,0,0,0.22),0_0_0_1px_rgba(0,0,0,0.04)] w-full" style={{ height: 580 }}>
                 {/* chrome */}
                 <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f5f5f5] border-b border-gray-200">
                   <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
@@ -1803,149 +1889,181 @@ function WebsiteTransformation() {
                     mikesplumbing.com
                   </div>
                 </div>
-                {/* 10/10 conversion-optimised plumbing homepage */}
-                <div className="bg-white" style={{ fontFamily: '"Inter", system-ui, -apple-system, sans-serif' }}>
+                <div className="overflow-hidden" style={{ fontFamily: '"Inter", system-ui, -apple-system, sans-serif', background: '#fff', maxHeight: 537 }}>
 
-                  {/* ── 1. Emergency alert bar ── */}
-                  <div className="bg-[#b91c1c] px-4 py-1.5 flex items-center justify-between">
-                    <span className="text-[7.5px] font-semibold text-white/90 tracking-wider uppercase">24/7 Emergency Response Available</span>
-                    <span className="text-[8.5px] font-extrabold text-white tracking-wide">(555) 482-9921</span>
+                  {/* ── Utility bar: thin, centered, warm beige ── */}
+                  <div className="flex items-center justify-center gap-3 py-1 border-b border-[#E0DDD7]" style={{ backgroundColor: '#F5F4F0' }}>
+                    <span className="text-[6px] font-semibold tracking-widest uppercase" style={{ color: '#A52A2A' }}>Reliable Chicago Plumbing</span>
+                    <span className="text-[6px]" style={{ color: '#C2BEB1' }}>·</span>
+                    <span className="text-[6px] font-bold" style={{ color: '#A52A2A' }}>(555) 482-9921</span>
                   </div>
 
-                  {/* ── 2. Nav ── */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-[#111]">
-                    <div>
-                      <div className="text-[11px] font-bold text-white tracking-tight leading-none">Mike&apos;s Plumbing</div>
-                      <div className="text-[7px] text-gray-500 mt-0.5 font-medium">Chicago, IL · Lic. #PLB-48821</div>
+                  {/* ── Nav ── */}
+                  <div className="flex items-center justify-between px-4 py-2 bg-white border-b border-gray-100">
+                    <div style={{ fontFamily: 'Georgia, serif', color: '#A52A2A', fontSize: 11, fontWeight: 800, letterSpacing: '-0.02em' }}>
+                      Mike&apos;s Plumbing
                     </div>
-                    <div className="flex items-center gap-3 text-[8.5px] text-gray-400">
-                      <span>Services</span><span>About</span><span>Reviews</span>
-                    </div>
-                    <div className="text-[8.5px] font-bold text-white bg-[#b91c1c] rounded-sm px-3 py-1.5 tracking-wide cursor-pointer">Call Now</div>
-                  </div>
-
-                  {/* ── 3. Hero ── */}
-                  <div className="bg-[#111] px-4 pt-5 pb-5">
-                    {/* eyebrow */}
-                    <div className="flex items-center gap-1.5 mb-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#b91c1c] flex-shrink-0" />
-                      <span className="text-[7.5px] font-semibold text-gray-400 uppercase tracking-widest">Same-Day Dispatch · Licensed &amp; Insured</span>
-                    </div>
-                    {/* headline */}
-                    <div className="text-[18px] font-extrabold text-white leading-[1.15] tracking-tight mb-2.5">
-                      Chicago&apos;s 24/7<br/>Emergency Plumbers
-                    </div>
-                    {/* subheadline */}
-                    <div className="text-[9px] text-gray-400 leading-relaxed mb-4" style={{maxWidth: 280}}>
-                      Burst pipes, sewer backups, clogged drains — we handle it all. Family-owned since 1991, serving Chicago and suburbs.
-                    </div>
-                    {/* primary CTA */}
-                    <div className="bg-[#b91c1c] rounded-md py-3 text-center mb-2 cursor-pointer" style={{boxShadow:'0 2px 16px rgba(185,28,28,0.45)'}}>
-                      <span className="text-[11px] font-extrabold text-white tracking-wide">📞 Call Now — (555) 482-9921</span>
-                    </div>
-                    {/* secondary CTA */}
-                    <div className="border border-white/15 rounded-md py-2 text-center cursor-pointer">
-                      <span className="text-[9px] font-semibold text-white/70">Get a Free Estimate</span>
-                    </div>
-                    {/* trust stats */}
-                    <div className="flex items-center mt-4 pt-4 border-t border-white/10">
-                      {[
-                        {n:'30+',   l:'Years\nExperience',   gold:false},
-                        {n:'5,000+', l:'Jobs\nCompleted',   gold:false},
-                        {n:'4.9★',  l:'Google Rating\n300+ Reviews', gold:true},
-                      ].map(({n,l,gold},i) => (
-                        <div key={l} className={`flex-1 text-center py-0.5 ${i < 2 ? 'border-r border-white/10' : ''}`}>
-                          <div className={`text-[12px] font-extrabold leading-none ${gold ? 'text-[#fbbf24]' : 'text-white'}`}>{n}</div>
-                          <div className="text-[7px] text-gray-500 mt-1 leading-snug whitespace-pre-line">{l}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* ── 4. Fast Response Guarantee ── */}
-                  <div className="bg-[#f8f8f8] border-b border-gray-200 px-4 py-3 flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#b91c1c] flex items-center justify-center flex-shrink-0">
-                      <span className="text-white text-[10px] font-bold leading-none">!</span>
-                    </div>
-                    <div>
-                      <div className="text-[9px] font-bold text-gray-900 leading-tight">Fast Response Guarantee</div>
-                      <div className="text-[7.5px] text-gray-500 mt-0.5 leading-relaxed">Plumbers dispatched immediately. Most calls handled same day.</div>
-                    </div>
-                  </div>
-
-                  {/* ── 5. Services ── */}
-                  <div className="bg-white px-4 pt-4 pb-4">
-                    <div className="text-[8px] font-bold text-gray-400 uppercase tracking-widest mb-3">What We Fix</div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {[
-                        {dot:'#b91c1c', t:'Sewer & Drain Repair',    d:'Fast clearing & camera inspection'},
-                        {dot:'#b91c1c', t:'Flood Control',            d:'City-certified, lifetime guarantee'},
-                        {dot:'#b91c1c', t:'Plumbing Installation',    d:'Fixtures, water heaters & more'},
-                        {dot:'#b91c1c', t:'Emergency Plumbing',       d:'24/7 · Rapid same-day dispatch'},
-                      ].map(({dot,t,d}) => (
-                        <div key={t} className="rounded-md border border-gray-100 bg-[#fafafa] p-2.5">
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{background:dot}} />
-                            <div className="text-[9px] font-semibold text-gray-900 leading-tight">{t}</div>
-                          </div>
-                          <div className="text-[7.5px] text-gray-500 leading-snug pl-3">{d}</div>
-                        </div>
-                      ))}
-                    </div>
-                    {/* service area */}
-                    <div className="mt-3 text-[7.5px] text-gray-400 text-center">
-                      Serving Chicago · Naperville · Evanston · Oak Park &amp; all suburbs
-                    </div>
-                  </div>
-
-                  {/* ── 6. Testimonial ── */}
-                  <div className="bg-[#f8f8f8] border-t border-b border-gray-200 px-4 py-3.5">
-                    <div className="flex gap-0.5 mb-2">
-                      {[1,2,3,4,5].map(i=><span key={i} className="text-[10px] leading-none text-[#fbbf24]">★</span>)}
-                    </div>
-                    <div className="text-[8.5px] text-gray-800 leading-relaxed italic mb-2">
-                      &ldquo;Mike&apos;s team was at my house within the hour. Burst pipe in the middle of winter — fixed fast, fair price. I won&apos;t call anyone else.&rdquo;
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-[8px] text-gray-500 font-medium">Jennifer T. · Chicago, IL</span>
-                      <span className="inline-flex items-center gap-1 bg-[#f0fdf4] border border-[#bbf7d0] rounded-full px-2 py-0.5">
-                        <span className="text-[6.5px] text-[#15803d] font-bold">✓ Verified Google Review</span>
+                    <div className="flex items-center gap-2" style={{ fontSize: 6.5, color: '#4A4A4A' }}>
+                      <span>Residential</span><span style={{ color: '#C2BEB1' }}>|</span>
+                      <span>Commercial</span><span style={{ color: '#C2BEB1' }}>|</span>
+                      <span>Repairs</span><span style={{ color: '#C2BEB1' }}>|</span>
+                      <span>Contact</span><span style={{ color: '#C2BEB1' }}>|</span>
+                      <span className="flex items-center gap-0.5" style={{ fontWeight: 700, color: '#A52A2A', fontSize: 8 }}>
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: 9, height: 9, flexShrink: 0 }}>
+                          <path d="M3 1.5A1.5 1.5 0 0 1 4.5 0h1.585a1 1 0 0 1 .97.757l.69 2.758a1 1 0 0 1-.29.98L6.3 5.62a8.034 8.034 0 0 0 4.08 4.08l1.125-1.145a1 1 0 0 1 .98-.29l2.758.69A1 1 0 0 1 16 9.915V11.5A1.5 1.5 0 0 1 14.5 13C6.768 13 0 6.232 0 3.5A1.5 1.5 0 0 1 1.5 2H3V1.5z" fill="#A52A2A"/>
+                        </svg>
+                        (555) 482-9921
                       </span>
                     </div>
                   </div>
 
-                  {/* ── 7. Final CTA ── */}
-                  <div className="bg-[#111] px-4 py-5 text-center">
-                    <div className="text-[13px] font-extrabold text-white tracking-tight mb-1">Got a Plumbing Emergency?</div>
-                    <div className="text-[8.5px] text-gray-500 mb-3.5">Our licensed Chicago plumbers are ready to help.</div>
-                    <div className="bg-[#b91c1c] rounded-md py-2.5 cursor-pointer" style={{boxShadow:'0 2px 16px rgba(185,28,28,0.4)'}}>
-                      <span className="text-[10.5px] font-extrabold text-white tracking-wide">📞 Call Now — (555) 482-9921</span>
+                  {/* ── Hero: split — left beige copy panel, right photo ── */}
+                  <div className="flex" style={{ height: 160 }}>
+                    {/* Left: warm beige panel with headline + CTA */}
+                    <div className="flex flex-col justify-center px-4 gap-2 flex-shrink-0" style={{ width: '52%', backgroundColor: '#F5F4F0' }}>
+                      <div style={{ fontSize: 7, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#A52A2A' }}>
+                        Chicago, IL · Est. 1991
+                      </div>
+                      <div style={{ fontFamily: 'Georgia, serif', fontSize: 13.5, fontWeight: 800, color: '#2A1A1A', lineHeight: 1.2 }}>
+                        Quality Plumbing,<br />Done Right.
+                      </div>
+                      <div style={{ fontSize: 6.5, color: '#4A4A4A', lineHeight: 1.4, maxWidth: 110 }}>
+                        Installation, renovation &amp; repair. Family-owned for 30+ years.
+                      </div>
+                      <div className="flex items-center gap-1.5 mt-1">
+                        <div className="rounded cursor-pointer flex items-center justify-center" style={{ backgroundColor: '#A52A2A', padding: '6px 10px' }}>
+                          <span style={{ fontSize: 7, fontWeight: 800, color: '#fff', letterSpacing: '0.04em', display: 'block', textAlign: 'center' }}>Call Now</span>
+                        </div>
+                        <div className="rounded cursor-pointer border flex items-center justify-center" style={{ borderColor: '#C2BEB1', backgroundColor: 'transparent', padding: '6px 10px' }}>
+                          <span style={{ fontSize: 7, fontWeight: 600, color: '#4A4A4A', display: 'block', textAlign: 'center' }}>Free Estimate</span>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Right: lifestyle photo — warm bathroom with natural light */}
+                    <div className="flex-1 relative overflow-hidden">
+                      <div className="absolute inset-0" style={{
+                        backgroundImage: 'url(https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=70)',
+                        backgroundSize: 'cover', backgroundPosition: 'center',
+                      }} />
                     </div>
                   </div>
 
-                  {/* ── 8. Sticky mobile call bar (simulated) ── */}
-                  <div className="bg-[#b91c1c] px-4 py-2.5 flex items-center justify-center">
-                    <span className="text-[9.5px] font-extrabold text-white tracking-wide">📞 Tap to Call — (555) 482-9921</span>
+                  {/* ── Trust bar: 3 stats with dividers on white ── */}
+                  <div className="flex items-center justify-center gap-0 border-b" style={{ backgroundColor: '#fff', borderColor: '#E0DDD7' }}>
+                    {[
+                      { n: '30+', l: 'Years Experience' },
+                      { n: '5,000+', l: 'Jobs Completed' },
+                      { n: 'A+ BBB', l: 'Accredited' },
+                    ].map(({ n, l }, i) => (
+                      <div key={l} className="flex flex-col items-center py-2 flex-1" style={{ borderRight: i < 2 ? '1px solid #E0DDD7' : 'none' }}>
+                        <span style={{ fontSize: 10, fontWeight: 800, color: '#A52A2A', fontFamily: 'Georgia, serif' }}>{n}</span>
+                        <span style={{ fontSize: 5.5, color: '#888', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 600 }}>{l}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* ── Services: 4 columns on white, circle icon + title + desc ── */}
+                  <div className="px-4 py-3 border-b" style={{ borderColor: '#E0DDD7' }}>
+                    <div style={{ fontSize: 6, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888', textAlign: 'center', marginBottom: 8 }}>Our Services</div>
+                    <div className="grid grid-cols-4 gap-1">
+                      {[
+                        {
+                          t: 'Plumbing Repair', d: 'Leaks, clogs & fixtures',
+                          svg: <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: 13, height: 13 }}>
+                            <path d="M14.5 2a3.5 3.5 0 0 0-3.276 4.724L3.293 14.65a1 1 0 0 0 1.414 1.414l7.926-7.93A3.5 3.5 0 1 0 14.5 2zm0 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="white"/>
+                            <path d="M5 16a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" fill="white"/>
+                          </svg>
+                        },
+                        {
+                          t: 'Water Heaters', d: 'Install & maintain',
+                          svg: <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: 13, height: 13 }}>
+                            <rect x="5" y="3" width="10" height="12" rx="2" stroke="white" strokeWidth="1.5" fill="none"/>
+                            <line x1="8" y1="3" x2="8" y2="15" stroke="white" strokeWidth="1" opacity="0.5"/>
+                            <line x1="12" y1="3" x2="12" y2="15" stroke="white" strokeWidth="1" opacity="0.5"/>
+                            <path d="M10 6.5c0 0-1.5 1.5-1.5 2.5a1.5 1.5 0 0 0 3 0C11.5 8 10 6.5 10 6.5z" fill="white"/>
+                            <line x1="7" y1="17" x2="13" y2="17" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                            <line x1="10" y1="15" x2="10" y2="17" stroke="white" strokeWidth="1.5"/>
+                          </svg>
+                        },
+                        {
+                          t: 'Drain & Sewer', d: 'Clearing & inspection',
+                          svg: <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: 13, height: 13 }}>
+                            <circle cx="10" cy="10" r="7" stroke="white" strokeWidth="1.5" fill="none"/>
+                            <circle cx="10" cy="10" r="3" stroke="white" strokeWidth="1.5" fill="none"/>
+                            <line x1="10" y1="3" x2="10" y2="7" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                            <line x1="10" y1="13" x2="10" y2="17" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                            <line x1="3" y1="10" x2="7" y2="10" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                            <line x1="13" y1="10" x2="17" y2="10" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                          </svg>
+                        },
+                        {
+                          t: 'Renovation', d: 'Kitchen & bath',
+                          svg: <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: 13, height: 13 }}>
+                            <path d="M3 10L10 3l7 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 8.5V16a1 1 0 0 0 1 1h3v-4h2v4h3a1 1 0 0 0 1-1V8.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        },
+                      ].map(({ svg, t, d }) => (
+                        <div key={t} className="flex flex-col items-center text-center">
+                          <div className="flex items-center justify-center rounded-full mb-1" style={{ width: 26, height: 26, backgroundColor: '#C2BEB1', flexShrink: 0 }}>
+                            {svg}
+                          </div>
+                          <div style={{ fontSize: 5.5, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#A52A2A', lineHeight: 1.2, marginBottom: 1 }}>{t}</div>
+                          <div style={{ fontSize: 5, color: '#888', lineHeight: 1.3 }}>{d}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ── Pullquote review: left red accent bar, large italic text ── */}
+                  <div className="flex gap-2.5 px-4 py-3 border-b" style={{ backgroundColor: '#FDFCFB', borderColor: '#E0DDD7' }}>
+                    <div className="flex-shrink-0 rounded-full" style={{ width: 3, backgroundColor: '#A52A2A', alignSelf: 'stretch' }} />
+                    <div className="flex flex-col gap-1">
+                      <div className="flex gap-px">{[1,2,3,4,5].map(i => <span key={i} style={{ fontSize: 8, color: '#A52A2A' }}>★</span>)}</div>
+                      <p style={{ fontSize: 7, fontStyle: 'italic', color: '#4A4A4A', lineHeight: 1.5, fontFamily: 'Georgia, serif' }}>
+                        &ldquo;Mike&apos;s team arrived within the hour. Fixed fast, fair price. Won&apos;t call anyone else.&rdquo;
+                      </p>
+                      <span style={{ fontSize: 6, color: '#888', fontWeight: 600 }}>Jennifer T. · 300+ Google Reviews</span>
+                    </div>
+                  </div>
+
+                  {/* ── Request service form ── */}
+                  <div className="px-4 py-3 border-b bg-white" style={{ borderColor: '#E0DDD7' }}>
+                    <div style={{ maxWidth: '50%', margin: '0 auto' }}>
+                      <div style={{ fontSize: 7, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4A4A4A', marginBottom: 8 }}>Request Service</div>
+                      <div className="flex gap-1.5 mb-1.5">
+                        <div className="flex-1 rounded border px-2 py-1.5" style={{ borderColor: '#E0DDD7', fontSize: 7, color: '#aaa', backgroundColor: '#FDFCFB' }}>Name</div>
+                        <div className="flex-1 rounded border px-2 py-1.5" style={{ borderColor: '#E0DDD7', fontSize: 7, color: '#aaa', backgroundColor: '#FDFCFB' }}>Phone</div>
+                      </div>
+                      <div className="rounded border px-2 py-1.5 mb-2" style={{ borderColor: '#E0DDD7', fontSize: 7, color: '#aaa', backgroundColor: '#FDFCFB' }}>What do you need help with?</div>
+                      <div className="rounded py-2 text-center cursor-pointer" style={{ backgroundColor: '#A52A2A' }}>
+                        <span style={{ fontSize: 8, fontWeight: 800, color: '#fff', letterSpacing: '0.06em' }}>Request Service</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* ── Footer CTA: tan beige strip ── */}
+                  <div className="flex items-center justify-between px-4 py-3" style={{ backgroundColor: '#C2BEB1' }}>
+                    <div>
+                      <div style={{ fontFamily: 'Georgia, serif', fontSize: 9.5, fontWeight: 800, color: '#2A1A1A', lineHeight: 1.2 }}>Got a Plumbing Emergency?</div>
+                      <div style={{ fontSize: 6, color: '#5A4A4A', marginTop: 1 }}>Licensed · Insured · Same-day service</div>
+                    </div>
+                    <div className="rounded px-3 py-1.5 flex-shrink-0 cursor-pointer" style={{ backgroundColor: '#A52A2A' }}>
+                      <span style={{ fontSize: 7.5, fontWeight: 800, color: '#fff' }}>(555) 482-9921</span>
+                    </div>
                   </div>
 
                 </div>
               </div>
-              {/* caption */}
-              <div className="flex flex-wrap gap-2">
-                {['Mobile-friendly','Easy to update','Builds trust instantly','Drives more calls'].map(t => (
-                  <span key={t} className="text-[11px] text-green-700 bg-green-50 border border-green-100 rounded-full px-3 py-1">{t}</span>
+              {/* Outcome chips */}
+              <div className="flex flex-wrap gap-2 justify-center">
+                {['Phone number in nav','Services at a glance','Reviews build trust','Clear call to action'].map(t => (
+                  <span key={t} className="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-md px-2.5 py-1.5 leading-none font-medium">{t}</span>
                 ))}
               </div>
             </div>
 
           </div>
-        </Reveal>
-
-        {/* bottom note */}
-        <Reveal delay={200}>
-          <p className="mt-10 text-center text-sm text-gray-400">
-            Both of these are the same plumbing business. One loses customers. One earns them.
-          </p>
         </Reveal>
       </div>
     </section>
@@ -1955,7 +2073,7 @@ function WebsiteTransformation() {
 function FaqSection() {
   const [open, setOpen] = useState(null)
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-gray-100">
+    <section className="pt-16 pb-20 md:pt-20 md:pb-28 bg-white">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionLabel text="FAQ" />

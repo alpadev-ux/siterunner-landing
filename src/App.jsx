@@ -669,19 +669,6 @@ export default function App() {
               </Reveal>
             ))}
           </div>
-          <Reveal delay={400}>
-            <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400 text-center">
-              <span>No contracts</span>
-              <span className="text-gray-200">·</span>
-              <span>Cancel anytime</span>
-              <span className="text-gray-200">·</span>
-              <span>Keep your domain</span>
-              <span className="text-gray-200">·</span>
-              <span>Review before you pay</span>
-              <span className="text-gray-200">·</span>
-              <span>No upfront payment required</span>
-            </div>
-          </Reveal>
         </div>
       </section>
 

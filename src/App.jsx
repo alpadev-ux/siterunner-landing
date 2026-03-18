@@ -578,12 +578,94 @@ export default function App() {
 
       </div>{/* end Card 1b */}
 
+      {/* ── Card 1bii - dark stats, stacks over Card 1b ── */}
+      <div className="relative z-[16] -mt-16 rounded-t-[4rem]" style={{ background: 'linear-gradient(160deg, #020617 0%, #0f172a 45%, #0f2a2a 100%)', boxShadow: '0 -20px 60px rgba(0,0,0,0.35)', paddingBottom: '6rem' }}>
+        <section className="pt-20 pb-20 md:pt-24 md:pb-28">
+          <div className="max-w-5xl mx-auto px-8 sm:px-6 lg:px-8">
+            <Reveal>
+              <SectionLabel text="By the numbers" />
+              <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-white tracking-[-0.02em] text-center leading-tight">
+                Your website is either<br className="hidden sm:block" /> winning business or losing it.
+              </h2>
+              <p className="mt-4 text-center text-gray-400 max-w-xl mx-auto leading-relaxed">
+                The research is clear. An outdated site costs you customers every day.
+              </p>
+            </Reveal>
+
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                {
+                  stat: '75%',
+                  value: 75,
+                  label: 'Credibility from design',
+                  body: 'of people judge a business\'s credibility based on their website design alone.',
+                  source: 'Stanford Web Credibility Research',
+                  icon: (
+                    <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6z"/>
+                      <circle cx="10" cy="8" r="2"/>
+                    </svg>
+                  ),
+                },
+                {
+                  stat: '53%',
+                  value: 53,
+                  label: 'Mobile abandonment',
+                  body: 'of mobile visits are abandoned if a page takes longer than 3 seconds to load.',
+                  source: 'Google / SOASTA Research',
+                  icon: (
+                    <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="5" y="2" width="10" height="16" rx="2"/>
+                      <line x1="8" y1="15" x2="12" y2="15"/>
+                    </svg>
+                  ),
+                },
+                {
+                  stat: '76%',
+                  value: 76,
+                  label: 'Local search converts',
+                  body: 'of people who search for a local business on their phone visit that business within a day.',
+                  source: 'Google Consumer Insights',
+                  icon: (
+                    <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="10" cy="10" r="7"/>
+                      <path d="M10 6v4l3 3"/>
+                    </svg>
+                  ),
+                },
+              ].map((item, i) => (
+                <Reveal key={item.label} delay={80 + i * 100}>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 flex flex-col gap-4 h-full">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-teal-500/15 border border-teal-500/20 flex items-center justify-center text-teal-400 flex-shrink-0">
+                        {item.icon}
+                      </div>
+                      <span className="text-[2.6rem] leading-none font-extrabold text-white tracking-tight">{item.stat}</span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-white mb-1">{item.label}</p>
+                      <p className="text-sm text-gray-400 leading-relaxed">{item.body}</p>
+                    </div>
+                    <div className="mt-auto pt-2">
+                      <div className="h-1 rounded-full bg-white/8 overflow-hidden mb-2">
+                        <div className="h-full rounded-full bg-gradient-to-r from-teal-500 to-teal-300" style={{ width: `${item.value}%` }} />
+                      </div>
+                      <p className="text-[10px] text-gray-500 font-medium">Source: {item.source}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>{/* end Card 1bii */}
+
       {/* ── Card 1c - white, stacks over Card 1b ── */}
       <div className="relative z-[18] -mt-16 rounded-t-[4rem] overflow-hidden bg-white" style={{ boxShadow: '0 -20px 60px rgba(0,0,0,0.18)', paddingBottom: '6rem' }}>
 
       {/* ── What We Handle ───────────────────────────────────────── */}
       <section className="pt-16 pb-20 md:pt-20 md:pb-28 bg-white">
-        <div className="max-w-4xl mx-auto px-8 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-8 sm:px-6 lg:px-8">
           <Reveal>
             <SectionLabel text="What's included" />
             <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-gray-900 tracking-[-0.015em] text-center">
@@ -594,23 +676,28 @@ export default function App() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { icon: Icon.clock,  label: 'Business hours' },
-                { icon: Icon.tag,    label: 'Pricing updates' },
-                { icon: Icon.chat,   label: 'Promotions' },
-                { icon: Icon.photo,  label: 'Photo swaps' },
-                { icon: Icon.check,  label: 'Service changes' },
-                { icon: Icon.user,   label: 'Seasonal content' },
-                { icon: Icon.arrow,  label: 'New sections' },
-                { icon: Icon.pencil, label: 'Menu updates' },
-              ].map(({ icon, label }) => (
-                <div key={label} className="flex items-center gap-2.5 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3.5">
-                  <span className="w-7 h-7 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center flex-shrink-0">
-                    {icon}
-                  </span>
-                  <span className="text-sm font-medium text-gray-700">{label}</span>
-                </div>
+                { icon: Icon.clock,  label: 'Business hours',   desc: 'Keep your hours accurate across every page.' },
+                { icon: Icon.tag,    label: 'Pricing updates',  desc: 'New rates go live fast, no back-and-forth.' },
+                { icon: Icon.chat,   label: 'Promotions',       desc: 'Announce deals and seasonal offers instantly.' },
+                { icon: Icon.photo,  label: 'Photo swaps',      desc: 'Fresh visuals whenever you need them.' },
+                { icon: Icon.check,  label: 'Service changes',  desc: 'Add, remove, or update any service listing.' },
+                { icon: Icon.user,   label: 'Seasonal content', desc: 'Holiday banners, seasonal specials, and more.' },
+                { icon: Icon.arrow,  label: 'New sections',     desc: 'Need a new page or section? Just ask.' },
+                { icon: Icon.pencil, label: 'Menu updates',     desc: 'Restaurant menus updated same day.' },
+              ].map(({ icon, label, desc }, i) => (
+                <Reveal key={label} delay={i * 40}>
+                  <div className="group flex flex-col gap-3 rounded-2xl border border-gray-100 bg-gray-50/60 p-5 hover:border-teal-200 hover:bg-teal-50/30 transition-all duration-200 h-full">
+                    <div className="w-9 h-9 rounded-xl bg-white border border-gray-100 text-teal-600 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:border-teal-200 group-hover:shadow-teal-100 transition-all duration-200">
+                      {icon}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-gray-800">{label}</p>
+                      <p className="mt-1 text-xs text-gray-500 leading-relaxed">{desc}</p>
+                    </div>
+                  </div>
+                </Reveal>
               ))}
             </div>
           </Reveal>
@@ -618,18 +705,20 @@ export default function App() {
       </section>
 
       {/* ── Industries strip ─────────────────────────────────────── */}
-      <section className="py-14 bg-white">
-        <div className="max-w-4xl mx-auto px-8 sm:px-6 lg:px-8 text-center">
-          <Reveal>
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Trusted by local service businesses including…</p>
-            <div className="flex flex-wrap justify-center gap-2.5">
-              {['Plumbers','HVAC Companies','General Contractors','Auto Shops','Dental Offices','Hair Salons','Restaurants','Chiropractors','Landscapers','Law Firms','Bakeries','Yoga Studios','Photographers','Boutiques','Veterinarians'].map(cat => (
-                <span key={cat} className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-600 hover:border-teal-300 hover:text-teal-700 transition-colors duration-150">
-                  {cat}
-                </span>
-              ))}
-            </div>
-          </Reveal>
+      <section className="pt-0 pb-20 md:pb-28 bg-white overflow-hidden">
+        <Reveal>
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-8">Trusted by local service businesses including…</p>
+        </Reveal>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="flex gap-3 animate-[marqueeScroll_32s_linear_infinite]" style={{ width: 'max-content' }}>
+            {['Plumbers','HVAC Companies','General Contractors','Auto Shops','Dental Offices','Hair Salons','Restaurants','Chiropractors','Landscapers','Law Firms','Bakeries','Yoga Studios','Photographers','Boutiques','Veterinarians','Plumbers','HVAC Companies','General Contractors','Auto Shops','Dental Offices','Hair Salons','Restaurants','Chiropractors','Landscapers','Law Firms','Bakeries','Yoga Studios','Photographers','Boutiques','Veterinarians'].map((cat, i) => (
+              <span key={i} className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-600 whitespace-nowrap flex-shrink-0">
+                {cat}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1709,7 +1798,7 @@ function WebsiteTransformation() {
           <h2 className="mt-5 text-[clamp(1.75rem,3vw,2.4rem)] font-extrabold text-gray-900 tracking-[-0.02em] text-center leading-tight">
             The difference between being overlooked<br className="hidden sm:block" /> and getting calls.
           </h2>
-          <p className="mt-5 text-center text-gray-500 max-w-lg mx-auto leading-relaxed text-[0.975rem]">
+          <p className="mt-5 text-center text-gray-500 mx-auto text-[clamp(0.7rem,2.5vw,0.975rem)] whitespace-nowrap">
             Same business. Same services. The only thing that changed was the{' '}
             <span className="text-accent font-semibold">website</span>.
           </p>

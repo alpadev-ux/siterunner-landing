@@ -242,12 +242,12 @@ export default function App() {
           animation: 'heroGradientShift 18s ease infinite',
         }}
       >
-        {/* ambient glow orbs — hidden on mobile for performance */}
+        {/* ambient glow orbs - hidden on mobile for performance */}
         <div className="hero-glow absolute -top-40 -right-24 w-[600px] h-[600px] rounded-full bg-teal-400/12 blur-[130px] pointer-events-none" />
         <div className="hero-glow absolute bottom-0 left-0 w-[480px] h-[480px] rounded-full bg-teal-600/18 blur-[110px] pointer-events-none" />
         <div className="hero-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-teal-500/6 blur-[100px] pointer-events-none" />
 
-        {/* dot-grid texture — hidden on mobile for performance */}
+        {/* dot-grid texture - hidden on mobile for performance */}
         <div
           className="hero-dot-grid absolute inset-0 pointer-events-none"
           style={{
@@ -267,10 +267,10 @@ export default function App() {
             <svg className="h-[1.8em] w-auto flex-shrink-0 mb-[0.18em] -ml-px" viewBox="-2 -6 28 32" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 6px rgba(94,234,212,0.85))' }}>
               {/* Cursor */}
               <path d="M2,1 L2,21 L6,17 L9,24 L12,23 L9,16 L15,16 Z" fill="#5eead4" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
-              {/* Twinkle 1 — larger, upper right */}
+              {/* Twinkle 1 - larger, upper right */}
               <line x1="17" y1="-1.5" x2="17" y2="3.5" stroke="#5eead4" strokeWidth="1.3" />
               <line x1="14.5" y1="1" x2="19.5" y2="1" stroke="#5eead4" strokeWidth="1.3" />
-              {/* Twinkle 2 — smaller, further right */}
+              {/* Twinkle 2 - smaller, further right */}
               <line x1="21" y1="5" x2="21" y2="9" stroke="#5eead4" strokeWidth="1" />
               <line x1="19" y1="7" x2="23" y2="7" stroke="#5eead4" strokeWidth="1" />
             </svg>
@@ -321,7 +321,7 @@ export default function App() {
       </header>
 
 
-      {/* ── Card 1 — white, floats up over hero ── */}
+      {/* ── Card 1 - white, floats up over hero ── */}
       <div className="-mt-14 relative z-10 rounded-t-[4rem] bg-white" style={{ boxShadow: '0 -8px 60px rgba(0,0,0,0.35)', paddingBottom: '6rem', clipPath: 'inset(0 0 0 0 round 4rem 4rem 0 0)' }}>
 
       {/* ── Process Storyrail ────────────────────────────────────── */}
@@ -330,7 +330,7 @@ export default function App() {
 
           <ProcessStory />
 
-          {/* ── DELETED dark container kept for reference — replaced by ProcessStory ── */}
+          {/* ── DELETED dark container kept for reference - replaced by ProcessStory ── */}
           {false && <div
               className="relative rounded-3xl overflow-hidden"
               style={{
@@ -338,7 +338,7 @@ export default function App() {
                 boxShadow: '0 32px 80px -16px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06)',
               }}
             >
-              {/* Layered radial light overlay — replaces dot grid */}
+              {/* Layered radial light overlay - replaces dot grid */}
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -386,7 +386,7 @@ export default function App() {
                       },
                     ].map(({ n, icon, title, body, tag, lit }) => (
                       <div key={n} className="relative mt-8 flex flex-col group">
-                        {/* Floating step circle — sits above the card */}
+                        {/* Floating step circle - sits above the card */}
                         <div
                           className={`absolute -top-7 left-1/2 -translate-x-1/2 z-10 w-14 h-14 rounded-full border-2 flex items-center justify-center text-base font-extrabold tracking-tight transition-all duration-300 group-hover:scale-110 ${
                             lit
@@ -422,7 +422,7 @@ export default function App() {
                           </div>
                         </div>
 
-                        {/* Drip connector — step 03 only, leads to demo below */}
+                        {/* Drip connector - step 03 only, leads to demo below */}
                         {lit && (
                           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full pt-5 flex flex-col items-center pointer-events-none z-10">
                             <div className="w-px h-8 bg-gradient-to-b from-teal-400/55 to-teal-400/5" />
@@ -490,7 +490,7 @@ export default function App() {
                 </div>
               </div>
 
-              {/* ── Divider — pill anchored to Step 03 column center on desktop ── */}
+              {/* ── Divider - pill anchored to Step 03 column center on desktop ── */}
               <div className="relative mx-8 md:mx-14 h-px bg-white/8">
                 {/* Desktop: pill sits at 83.33% = center of col 3, visually bridging step 03 → demo */}
                 <div
@@ -540,16 +540,16 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Right: chat demo — ~17% wider than before */}
+                {/* Right: chat demo - ~17% wider than before */}
                 <div className="w-full lg:w-[500px] flex-shrink-0 relative">
-                  {/* Outer bloom — wide, soft */}
+                  {/* Outer bloom - wide, soft */}
                   <div
                     className="absolute -inset-14 pointer-events-none"
                     style={{
                       background: 'radial-gradient(ellipse at 50% 55%, rgba(20,184,166,0.32) 0%, rgba(15,118,110,0.12) 45%, transparent 68%)',
                     }}
                   />
-                  {/* Inner highlight — tight, brighter center */}
+                  {/* Inner highlight - tight, brighter center */}
                   <div
                     className="absolute -inset-4 pointer-events-none"
                     style={{
@@ -570,7 +570,7 @@ export default function App() {
 
       </div>{/* end Card 1 */}
 
-      {/* ── Card 1b — pure white, stacks over Card 1 ── */}
+      {/* ── Card 1b - pure white, stacks over Card 1 ── */}
       <div className="relative z-[15] -mt-16 rounded-t-[4rem] overflow-hidden bg-white" style={{ boxShadow: '0 -20px 60px rgba(0,0,0,0.18)', paddingBottom: '6rem' }}>
 
       {/* ── Before / After Visual Mockup ──────────────────────────── */}
@@ -578,7 +578,7 @@ export default function App() {
 
       </div>{/* end Card 1b */}
 
-      {/* ── Card 1c — white, stacks over Card 1b ── */}
+      {/* ── Card 1c - white, stacks over Card 1b ── */}
       <div className="relative z-[18] -mt-16 rounded-t-[4rem] overflow-hidden bg-white" style={{ boxShadow: '0 -20px 60px rgba(0,0,0,0.18)', paddingBottom: '6rem' }}>
 
       {/* ── What We Handle ───────────────────────────────────────── */}
@@ -635,7 +635,7 @@ export default function App() {
 
       </div>{/* end Card 1c */}
 
-      {/* ── Card 2 — cool slate, stacks on top of Card 1c ── */}
+      {/* ── Card 2 - cool slate, stacks on top of Card 1c ── */}
       <div className="relative z-20 -mt-16 rounded-t-[4rem] overflow-hidden" style={{ background: '#f1f5f9', boxShadow: '0 -20px 60px rgba(0,0,0,0.2)', paddingBottom: '6rem' }}>
 
       {/* ── Pricing ──────────────────────────────────────────────── */}
@@ -674,7 +674,7 @@ export default function App() {
 
       </div>{/* end Card 2 */}
 
-      {/* ── Card 3 — warm cream, stacks on top of Card 2 ── */}
+      {/* ── Card 3 - warm cream, stacks on top of Card 2 ── */}
       <div className="relative z-30 -mt-16 rounded-t-[4rem] overflow-hidden" style={{ background: '#faf8f5', boxShadow: '0 -20px 60px rgba(0,0,0,0.17)', paddingBottom: '6rem' }}>
 
       {/* ── Lead Capture Form ─────────────────────────────────────── */}
@@ -764,7 +764,7 @@ export default function App() {
 
       </div>{/* end Card 3 */}
 
-      {/* ── Card 3b — white, stacks over Card 3 ── */}
+      {/* ── Card 3b - white, stacks over Card 3 ── */}
       <div className="relative -mt-16 rounded-t-[4rem] overflow-hidden bg-white" style={{ zIndex: 35, boxShadow: '0 -20px 60px rgba(0,0,0,0.17)', paddingBottom: '6rem' }}>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
@@ -772,7 +772,7 @@ export default function App() {
 
       </div>{/* end Card 3b */}
 
-      {/* ── Card 4 — dark, stacks on top of Card 3 ── */}
+      {/* ── Card 4 - dark, stacks on top of Card 3 ── */}
       <div className="relative z-40 -mt-16 rounded-t-[4rem] overflow-hidden" style={{ background: 'linear-gradient(135deg, #020617 0%, #0f172a 30%, #0f766e 62%, #0f172a 84%, #020617 100%)', boxShadow: '0 -20px 60px rgba(0,0,0,0.18)' }}>
 
       {/* ── Final CTA ─────────────────────────────────────────────── */}
@@ -819,7 +819,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Footer info — sits below the CTA button */}
+            {/* Footer info - sits below the CTA button */}
             <div className="mt-16 pt-8 border-t border-white/10 flex flex-col items-center gap-4 text-center">
               <div className="flex items-center gap-0">
                 <span className="font-bold text-xl tracking-tight leading-none">
@@ -858,7 +858,7 @@ function SectionLabel({ text, className = '' }) {
 }
 
 /**
- * FloatingBadge — infinite looping float-up animation.
+ * FloatingBadge - infinite looping float-up animation.
  * Each badge has a different duration and delay so they feel organic.
  * During the initial delay, animationFillMode "both" holds opacity:0
  * from the 0% keyframe so the badge stays invisible until its cycle begins.
@@ -970,7 +970,7 @@ function StepConnector() {
         top: '2rem',
         left: 'calc(16.67% + 1.5rem)',
         right: 'calc(16.67% + 1.5rem)',
-        /* Base gradient — bright spot flows left to right after reveal */
+        /* Base gradient - bright spot flows left to right after reveal */
         background: 'linear-gradient(90deg, rgba(20,184,166,0.22) 0%, rgba(20,184,166,0.55) 20%, rgba(94,234,212,0.95) 50%, rgba(20,184,166,0.55) 80%, rgba(20,184,166,0.22) 100%)',
         backgroundSize: '300% 100%',
         backgroundPosition: '100% 0',
@@ -1029,7 +1029,7 @@ function HeroChatSim() {
       }
     }
 
-    // User "sees" the Send / ⚡ Mark Urgent options — after a beat, auto-click urgent
+    // User "sees" the Send / ⚡ Mark Urgent options - after a beat, auto-click urgent
     if (stage === 'urgent_select') {
       const t = setTimeout(() => {
         setUrgentPressed(true)
@@ -1112,7 +1112,7 @@ function HeroChatSim() {
         </div>
       </div>
 
-      {/* messages — min-h-0 so this shrinks when input box grows (wraps) */}
+      {/* messages - min-h-0 so this shrinks when input box grows (wraps) */}
       <div className="px-5 pt-4 pb-3 space-y-3 flex-1 min-h-0 flex flex-col justify-end overflow-auto">
         {messages.map((msg, i) => {
           const isPast = convoIdx > 0 && i < 2
@@ -1173,7 +1173,7 @@ function HeroChatSim() {
         )}
       </div>
 
-      {/* input field — wraps to multiple lines; only this area grows, messages area shrinks */}
+      {/* input field - wraps to multiple lines; only this area grows, messages area shrinks */}
       <div className="px-4 pb-4 flex-shrink-0">
         <div
           className={`flex items-end gap-2.5 rounded-xl border px-4 py-3 transition-all duration-300 min-h-[52px] ${inputBorderCls}`}
@@ -1204,7 +1204,7 @@ function HeroChatSim() {
           </button>
         </div>
 
-        {/* Urgency selector — appears after typing finishes on urgent convos */}
+        {/* Urgency selector - appears after typing finishes on urgent convos */}
         {inUrgentUI && (
           <div
             className="flex items-center justify-end gap-2 mt-2"
@@ -1241,7 +1241,7 @@ function HeroChatSim() {
     { c: 'text-teal-300/90', t: '<!DOCTYPE html>' },
     { c: 'text-teal-300/90', t: '<html lang="en">' },
     { c: 'text-white/45',    t: '  <head>' },
-    { c: 'text-sky-300/75',  t: "    <title>Apex Plumbing Co. — Local Plumbing Services</title>" },
+    { c: 'text-sky-300/75',  t: "    <title>Apex Plumbing Co. - Local Plumbing Services</title>" },
     { c: 'text-sky-300/55',  t: '    <link rel="stylesheet" href="styles.css">' },
     { c: 'text-white/45',    t: '  </head>' },
     { c: 'text-white/45',    t: '  <body>' },
@@ -1294,7 +1294,7 @@ function HeroChatSim() {
           <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
           <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
           <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-          <span className="ml-3 font-mono text-[11px] text-white/35 truncate">~/siteupscale/apex-plumbing  —  index.html</span>
+          <span className="ml-3 font-mono text-[11px] text-white/35 truncate">~/siteupscale/apex-plumbing  -  index.html</span>
         </div>
         <div ref={scrollRef} className="flex-1 overflow-y-auto p-5 font-mono text-[11px] leading-[1.8]" style={{ scrollbarWidth: 'none' }}>
           {TERMINAL_LINES.slice(0, visible).map((line, i) => (
@@ -1317,7 +1317,7 @@ function HeroChatSim() {
   const APPROVAL_MSGS = [
     { from: 'sr',      text: "Your website is ready for review! Take a look \uD83D\uDC40",                 delay: 700  },
     { from: 'preview', url:  'apex-plumbing.siteupscale.com',                                            delay: 1500 },
-    { from: 'owner',   text: "Just checked it on my phone — this looks incredible. Love it!",            delay: 3400 },
+    { from: 'owner',   text: "Just checked it on my phone - this looks incredible. Love it!",            delay: 3400 },
     { from: 'sr',      text: "So glad you love it! Your site is now live. Welcome to SiteUpscale \uD83C\uDF89", delay: 5000 },
     { from: 'badge',                                                                                    delay: 6000 },
   ]
@@ -1462,7 +1462,7 @@ function HeroChatSim() {
     // Scroll-driver progress: the driver div is 400 vh tall.
     // Scrollable distance = 300 vh (400 - 100 viewport).
     // Each of the 3 steps occupies exactly 100 vh of that range.
-    // The viewport is pinned — no content physically scrolls.
+    // The viewport is pinned - no content physically scrolls.
     useEffect(() => {
       const update = () => {
         const driver = driverRef.current
@@ -1525,7 +1525,7 @@ function HeroChatSim() {
       <>
         {/* ── Desktop: sticky scroll-driver pattern ─────────────────────────
             The 400 vh driver div provides 300 vh of scrollable range.
-            The viewport is physically pinned the entire time — the user
+            The viewport is physically pinned the entire time - the user
             scrolls through the driver while the content cross-fades.
             Each step occupies exactly 100 vh of scroll distance. ────────── */}
         <div
@@ -1537,7 +1537,7 @@ function HeroChatSim() {
             className="sticky top-0 flex flex-col bg-white overflow-hidden"
             style={{ height: '100vh' }}
           >
-            {/* Heading — locked at top of sticky panel, zero gap to content */}
+            {/* Heading - locked at top of sticky panel, zero gap to content */}
             <div className="flex-shrink-0 pt-10 pb-2 text-center">
               <SectionLabel text="How it works" />
               <h2 className="mt-3 text-[clamp(2rem,3.5vw,3.25rem)] font-extrabold text-gray-900 tracking-[-0.025em] leading-[1.08]">
@@ -1548,9 +1548,9 @@ function HeroChatSim() {
               </p>
             </div>
 
-            {/* Content row — natural height, does NOT flex-grow so the strip follows immediately below */}
+            {/* Content row - natural height, does NOT flex-grow so the strip follows immediately below */}
             <div className="flex items-start gap-14 xl:gap-20 pt-6 pb-0">
-            {/* Left: step descriptions — absolutely stacked, cross-fade between steps */}
+            {/* Left: step descriptions - absolutely stacked, cross-fade between steps */}
             <div className="w-[360px] xl:w-[400px] flex-shrink-0 relative flex flex-col text-left" style={{ marginTop: '2rem', height: 'min(620px, calc(100vh - 580px))' }}>
               {STEPS.map((step, i) => (
                 <div
@@ -1607,7 +1607,7 @@ function HeroChatSim() {
                   </div>
                 ))}
               </div>
-              {/* Progress dots — clicking jumps to that step's scroll position */}
+              {/* Progress dots - clicking jumps to that step's scroll position */}
               <div className="flex justify-center items-center gap-2.5">
                 {STEPS.map((_, i) => (
                   <button
@@ -1620,7 +1620,7 @@ function HeroChatSim() {
             </div>
             </div> {/* end content-row */}
 
-            {/* Who it's for — locked in the sticky panel, always visible while scrolling steps */}
+            {/* Who it's for - locked in the sticky panel, always visible while scrolling steps */}
             <div className="flex-shrink-0 border-t border-gray-100 mt-5 pt-5 pb-6 bg-white">
               <div className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8">
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest text-center mb-4">Built for local business owners who…</p>
@@ -1679,7 +1679,7 @@ const FIX_CALLOUTS = [
   {
     id: 1,
     title: 'Cleaner menu layout',
-    desc: 'Spaced, readable menu items with clear names and prices — no more wall of text.',
+    desc: 'Spaced, readable menu items with clear names and prices - no more wall of text.',
   },
   {
     id: 2,
@@ -1694,7 +1694,7 @@ const FAQS = [
   { q: 'Do I keep my domain?',            a: 'Yes. Your domain is always yours. We never hold it hostage.' },
   { q: 'What if I cancel?',               a: 'Your site stays live until the end of your billing cycle. No sudden takedowns.' },
   { q: 'How fast are updates?',           a: 'Usually within an hour during business hours. Urgent requests are flagged and handled first.' },
-  { q: 'Do you redesign websites too?',   a: 'Yes. We can refresh an existing site or build a brand new one from scratch — both at zero upfront cost.' },
+  { q: 'Do you redesign websites too?',   a: 'Yes. We can refresh an existing site or build a brand new one from scratch - both at zero upfront cost.' },
   { q: 'What if I already have a site?',  a: 'Great. We can work with what you have, refresh the design, or rebuild it cleanly. Your call.' },
   { q: 'Is there a contract?',            a: 'No contracts. Month-to-month only. Cancel anytime with no penalties.' },
 ]
@@ -1729,7 +1729,7 @@ function WebsiteTransformation() {
               </div>
               {/* Faded, lower-shadow treatment to visually de-emphasize */}
               <div className="rounded-2xl overflow-hidden border border-gray-200/70 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08)] w-full" style={{ height: 580, filter: 'saturate(0.5) brightness(0.85) contrast(0.88) blur(0.5px)' }}>
-                {/* browser chrome — greyed out, IE-era */}
+                {/* browser chrome - greyed out, IE-era */}
                 <div className="flex items-center gap-1.5 px-4 py-3 bg-[#e0e0e0] border-b border-gray-300">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#d0d0d0]" />
                   <span className="w-2.5 h-2.5 rounded-full bg-[#d0d0d0]" />
@@ -1738,7 +1738,7 @@ function WebsiteTransformation() {
                     www.mikesplumbing.net
                   </div>
                 </div>
-                {/* page content — authentic 2004 local biz site */}
+                {/* page content - authentic 2004 local biz site */}
                 <div className="overflow-hidden" style={{ height: 'calc(100% - 44px)', fontFamily: 'Arial, Helvetica, sans-serif', background: '#c8daf0', backgroundImage: 'repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(255,255,255,0.25) 19px,rgba(255,255,255,0.25) 20px),repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(255,255,255,0.25) 19px,rgba(255,255,255,0.25) 20px)' }}>
 
                   {/* ── HEADER: logo left, cluttered right ── */}
@@ -1754,7 +1754,7 @@ function WebsiteTransformation() {
                         <div style={{ fontSize: 6, color: '#999', fontFamily: 'Comic Sans MS, cursive' }}>Chicago&apos;s Most Trusted Plumber</div>
                       </div>
                     </div>
-                    {/* Right: badges only — phone deliberately hidden */}
+                    {/* Right: badges only - phone deliberately hidden */}
                     <div className="flex flex-col justify-center items-end px-2 py-1.5 gap-1 flex-shrink-0 bg-[#f0f0f0]">
                       <div className="flex gap-1">
                         <div className="border border-[#336699] px-1 py-0.5 text-center" style={{ background: '#e8f0ff', fontSize: 5, color: '#336699', fontWeight: 700, lineHeight: 1.2 }}>BBB<br/>A+</div>
@@ -1884,14 +1884,14 @@ function WebsiteTransformation() {
               </div>
             </div>
 
-            {/* ── Arrow — larger, centered ── */}
+            {/* ── Arrow - larger, centered ── */}
             <div className="hidden lg:flex flex-col items-center justify-center" style={{ paddingTop: 260 }}>
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none" className="text-gray-300">
                 <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
 
-            {/* ── AFTER browser — more prominent ─────────────────── */}
+            {/* ── AFTER browser - more prominent ─────────────────── */}
             <div className="flex flex-col gap-4 min-w-0">
               <div className="flex items-center justify-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0" />
@@ -1900,7 +1900,7 @@ function WebsiteTransformation() {
                   <p className="text-[12px] font-semibold text-gray-900 leading-snug">SiteUpscale rebuild</p>
                 </div>
               </div>
-              {/* Stronger shadow — visually elevated */}
+              {/* Stronger shadow - visually elevated */}
               <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-[0_20px_70px_-8px_rgba(0,0,0,0.22),0_0_0_1px_rgba(0,0,0,0.04)] w-full" style={{ height: 580 }}>
                 {/* chrome */}
                 <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f5f5f5] border-b border-gray-200">
@@ -1939,7 +1939,7 @@ function WebsiteTransformation() {
                     </div>
                   </div>
 
-                  {/* ── Hero: split — left beige copy panel, right photo ── */}
+                  {/* ── Hero: split - left beige copy panel, right photo ── */}
                   <div className="flex" style={{ height: 160 }}>
                     {/* Left: warm beige panel with headline + CTA */}
                     <div className="flex flex-col justify-center px-4 gap-2 flex-shrink-0" style={{ width: '52%', backgroundColor: '#F5F4F0' }}>
@@ -1961,7 +1961,7 @@ function WebsiteTransformation() {
                         </div>
                       </div>
                     </div>
-                    {/* Right: lifestyle photo — warm bathroom with natural light */}
+                    {/* Right: lifestyle photo - warm bathroom with natural light */}
                     <div className="flex-1 relative overflow-hidden">
                       <div className="absolute inset-0" style={{
                         backgroundImage: 'url(https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=70)',
@@ -2171,7 +2171,7 @@ function WebsiteFixDemo() {
         </Reveal>
       </div>
 
-      {/* callout cards — click to focus, auto-cycle when idle */}
+      {/* callout cards - click to focus, auto-cycle when idle */}
       <Reveal delay={220}>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {FIX_CALLOUTS.map((c) => (
@@ -2198,7 +2198,7 @@ function WebsiteFixDemo() {
               </div>
               <p className="text-xs text-gray-500 leading-relaxed pl-7">{c.desc}</p>
 
-              {/* sweep progress bar — only during auto-cycle */}
+              {/* sweep progress bar - only during auto-cycle */}
               {active === c.id && !paused && (
                 <div
                   key={active}
@@ -2232,7 +2232,7 @@ function BeforeMockup() {
         </div>
       </div>
 
-      {/* cramped nav — no CTA */}
+      {/* cramped nav - no CTA */}
       <div className="flex items-center justify-between px-3 py-1.5 bg-gray-700 border-b border-gray-600">
         <span className="text-[8px] font-bold text-gray-300 tracking-widest uppercase">THE OLIVE TABLE</span>
         <div className="flex gap-2.5">
@@ -2242,7 +2242,7 @@ function BeforeMockup() {
         </div>
       </div>
 
-      {/* muddy hero — no headline */}
+      {/* muddy hero - no headline */}
       <div className="relative bg-gradient-to-b from-stone-500 to-stone-700 h-14 flex items-end justify-between px-3 pb-2">
         <span className="text-[8px] text-stone-400 italic opacity-80">Welcome to Our Restaurant</span>
         <span className="text-[7.5px] text-stone-500 border border-stone-600 px-1.5 py-0.5 rounded">LEARN MORE ›</span>
@@ -2253,7 +2253,7 @@ function BeforeMockup() {
         <span className="text-[7.5px] text-orange-600 truncate block">★ SPECIALS: Monday Pasta Night | Tues Wine | Fri–Sat Live Music...</span>
       </div>
 
-      {/* dense menu — no spacing */}
+      {/* dense menu - no spacing */}
       <div className="px-3 py-2">
         <div className="text-[8px] font-bold text-gray-500 uppercase border-b border-gray-200 pb-0.5 mb-1 tracking-widest">MENU</div>
         <div className="space-y-0">
@@ -2301,7 +2301,7 @@ function AfterMockup({ active }) {
         </div>
       </div>
 
-      {/* clean nav — ANNOTATION 0 */}
+      {/* clean nav - ANNOTATION 0 */}
       <div className={`relative flex items-center justify-between px-4 py-3 border-b transition-colors duration-300 ${active === 0 ? 'bg-accent/5 border-accent/15' : 'bg-white border-gray-100'}`}>
         <span className="text-sm font-bold text-gray-900">The Olive Table</span>
         <div className="flex items-center gap-3">
@@ -2326,7 +2326,7 @@ function AfterMockup({ active }) {
         </div>
       </div>
 
-      {/* clean menu — ANNOTATION 1 */}
+      {/* clean menu - ANNOTATION 1 */}
       <div className={`relative p-4 border-b transition-colors duration-300 ${active === 1 ? 'bg-accent/5 border-accent/15' : 'bg-white border-gray-100'}`}>
         <div className="text-[9px] font-bold text-gray-500 uppercase tracking-wider mb-2.5">Our Menu</div>
         <div className="space-y-1.5">
@@ -2347,7 +2347,7 @@ function AfterMockup({ active }) {
         {badge(1)}
       </div>
 
-      {/* clean info/hours — ANNOTATION 2 */}
+      {/* clean info/hours - ANNOTATION 2 */}
       <div className={`relative p-4 transition-colors duration-300 ${active === 2 ? 'bg-accent/5' : 'bg-white'}`}>
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -2499,13 +2499,13 @@ function BadRestaurantMockup() {
               </div>
             </div>
 
-            {/* Welcome copy — cluttered */}
+            {/* Welcome copy - cluttered */}
             <div className="text-[9px] text-gray-700 leading-relaxed mb-1.5 p-1.5 border border-gray-300 bg-[#fffef0]">
               <p>Welcome to <strong className="text-[#6b0000]">Luigi&apos;s Pizza Palace</strong>, your <u>BEST</u> choice for authentic Italian pizza right here in our town! We have been proudly serving the community with <em>love and dedication</em> since 1987. Our secret family recipes have been passed down through <strong>3 GENERATIONS</strong>!!</p>
-              <p className="mt-1">Visit us at <strong>147 Main Street</strong> — <span className="text-green-700 font-bold">FREE PARKING AVAILABLE!!</span> We are conveniently located next to the post office. <span className="text-blue-600 underline cursor-pointer text-[8.5px]">Click here for directions &gt;&gt;</span></p>
+              <p className="mt-1">Visit us at <strong>147 Main Street</strong> - <span className="text-green-700 font-bold">FREE PARKING AVAILABLE!!</span> We are conveniently located next to the post office. <span className="text-blue-600 underline cursor-pointer text-[8.5px]">Click here for directions &gt;&gt;</span></p>
             </div>
 
-            {/* Menu table — tiny, cramped */}
+            {/* Menu table - tiny, cramped */}
             <div className="border-2 border-gray-500">
               <div
                 className="text-[10px] font-black text-center text-yellow-300 py-0.5 uppercase tracking-wider"

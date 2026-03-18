@@ -1,6 +1,6 @@
 # SiteUpscale Landing Page
 
-A responsive single-page landing page for SiteUpscale — simple monthly website updates for local restaurants.
+A responsive single-page landing page for SiteUpscale - simple monthly website updates for local restaurants.
 
 ## Tech stack
 
@@ -33,11 +33,11 @@ Output is in `dist/`.
 
 ## Structure
 
-- **Hero** — Headline, subheadline, primary/secondary CTAs, mock browser visual
-- **Problem** — Pain points for restaurant websites
-- **Solution** — Example update requests
-- **How it works** — 3-step flow
-- **Pricing** — Starter / Growth / Pro cards
-- **Free offer** — Lead form (restaurant name, URL, name, email, phone, message)
-- **Final CTA** — Closing headline and CTA
-- **Footer** — Brand, tagline, email, copyright
+- **Hero** - Headline, subheadline, primary/secondary CTAs, mock browser visual
+- **Problem** - Pain points for restaurant websites
+- **Solution** - Example update requests
+- **How it works** - 3-step flow
+- **Pricing** - Starter / Growth / Pro cards
+- **Free offer** - Lead form (restaurant name, URL, name, email, phone, message)
+- **Final CTA** - Closing headline and CTA
+- **Footer** - Brand, tagline, email, copyright

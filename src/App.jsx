@@ -36,6 +36,19 @@ function Reveal({ children, delay = 0, className = '' }) {
   )
 }
 
+/* ─────────────────────── brand cursor mark ──────────────────────────── */
+function CursorMark({ size = 16, color = 'white' }) {
+  return (
+    <svg width={size} height={size} viewBox="-2 -6 28 32" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2,1 L2,21 L6,17 L9,24 L12,23 L9,16 L15,16 Z" fill={color} stroke="rgba(255,255,255,0.35)" strokeWidth="1" />
+      <line x1="17" y1="-1.5" x2="17" y2="3.5" stroke={color} strokeWidth="1.2" />
+      <line x1="14.5" y1="1" x2="19.5" y2="1" stroke={color} strokeWidth="1.2" />
+      <line x1="21" y1="5" x2="21" y2="9" stroke={color} strokeWidth="0.9" />
+      <line x1="19" y1="7" x2="23" y2="7" stroke={color} strokeWidth="0.9" />
+    </svg>
+  )
+}
+
 /* ─────────────────────── tiny inline SVG icons ──────────────────────── */
 const Icon = {
   clock: (
@@ -218,7 +231,7 @@ export default function App() {
   return (
     <div className="min-h-screen font-sans text-gray-900 antialiased" style={{ background: '#ffffff' }}>
 
-      <div className="overflow-hidden">
+      <div style={{ overflow: 'clip' }}>
 
       {/* ── Hero (nav integrated) ─────────────────────────────────── */}
       <header
@@ -246,7 +259,22 @@ export default function App() {
 
         {/* ── integrated nav ── */}
         <nav className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <span className="font-bold text-white text-lg tracking-tight">SiteUpscale</span>
+          <div className="flex items-center gap-0">
+            <span className="font-bold text-2xl tracking-tight leading-none">
+              <span className="text-white">Site</span><span className="text-teal-300" style={{ textShadow: '0 0 8px rgba(94,234,212,0.85)' }}>Upscale</span>
+            </span>
+            {/* Elevated NW cursor with twinkles */}
+            <svg className="h-[1.8em] w-auto flex-shrink-0 mb-[0.18em] -ml-px" viewBox="-2 -6 28 32" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 6px rgba(94,234,212,0.85))' }}>
+              {/* Cursor */}
+              <path d="M2,1 L2,21 L6,17 L9,24 L12,23 L9,16 L15,16 Z" fill="#5eead4" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
+              {/* Twinkle 1 — larger, upper right */}
+              <line x1="17" y1="-1.5" x2="17" y2="3.5" stroke="#5eead4" strokeWidth="1.3" />
+              <line x1="14.5" y1="1" x2="19.5" y2="1" stroke="#5eead4" strokeWidth="1.3" />
+              {/* Twinkle 2 — smaller, further right */}
+              <line x1="21" y1="5" x2="21" y2="9" stroke="#5eead4" strokeWidth="1" />
+              <line x1="19" y1="7" x2="23" y2="7" stroke="#5eead4" strokeWidth="1" />
+            </svg>
+          </div>
           <div className="hidden sm:flex items-center gap-6 text-sm font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>
             <button onClick={() => scrollTo('how-it-works')} className="hover:text-white transition-colors duration-150">How it works</button>
             <button onClick={() => scrollTo('pricing')} className="hover:text-white transition-colors duration-150">Pricing</button>
@@ -301,7 +329,7 @@ export default function App() {
 
 
       {/* ── Card 1 — white, floats up over hero ── */}
-      <div className="-mt-14 relative z-10 rounded-t-[4rem] overflow-hidden bg-white" style={{ boxShadow: '0 -8px 60px rgba(0,0,0,0.35)', paddingBottom: '6rem' }}>
+      <div className="-mt-14 relative z-10 rounded-t-[4rem] bg-white" style={{ boxShadow: '0 -8px 60px rgba(0,0,0,0.35)', paddingBottom: '6rem', clipPath: 'inset(0 0 0 0 round 4rem 4rem 0 0)' }}>
 
       {/* ── Process Storyrail ────────────────────────────────────── */}
       <section id="how-it-works" className="pt-16 pb-20 md:pt-20 md:pb-28 scroll-mt-8 bg-white">
@@ -808,23 +836,29 @@ export default function App() {
                 <span>{Icon.arrow}</span>
               </button>
             </div>
+
+            {/* Footer info — sits below the CTA button */}
+            <div className="mt-16 pt-8 border-t border-white/10 flex flex-col items-center gap-4 text-center">
+              <div className="flex items-center gap-0">
+                <span className="font-bold text-xl tracking-tight leading-none">
+                  <span className="text-white">Site</span><span className="text-teal-300" style={{ textShadow: '0 0 8px rgba(94,234,212,0.85)' }}>Upscale</span>
+                </span>
+                <svg className="h-[1.6em] w-auto flex-shrink-0 mb-[0.18em] -ml-px" viewBox="-2 -6 28 32" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 6px rgba(94,234,212,0.85))' }}>
+                  <path d="M2,1 L2,21 L6,17 L9,24 L12,23 L9,16 L15,16 Z" fill="#5eead4" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
+                  <line x1="17" y1="-1.5" x2="17" y2="3.5" stroke="#5eead4" strokeWidth="1.3" />
+                  <line x1="14.5" y1="1" x2="19.5" y2="1" stroke="#5eead4" strokeWidth="1.3" />
+                  <line x1="21" y1="5" x2="21" y2="9" stroke="#5eead4" strokeWidth="1" />
+                  <line x1="19" y1="7" x2="23" y2="7" stroke="#5eead4" strokeWidth="1" />
+                </svg>
+              </div>
+              <a href="mailto:hello@siteupscale.com" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                hello@siteupscale.com
+              </a>
+              <p className="text-sm text-gray-500">© {new Date().getFullYear()} SiteUpscale. All rights reserved.</p>
+            </div>
           </Reveal>
         </div>
       </section>
-
-      {/* ── Footer ───────────────────────────────────────────────── */}
-      <footer className="bg-gray-950 border-t border-white/5 py-12">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="font-bold text-white text-base">SiteUpscale</p>
-            <p className="text-sm text-gray-500 mt-0.5">Website care for local businesses. You never have to think about it.</p>
-          </div>
-          <a href="mailto:hello@siteupscale.com" className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
-            hello@siteupscale.com
-          </a>
-          <p className="text-sm text-gray-600">© {new Date().getFullYear()} SiteUpscale. All rights reserved.</p>
-        </div>
-      </footer>
       </div>{/* end Card 4 */}
       </div>{/* end inset column */}
     </div>
@@ -1084,7 +1118,7 @@ function HeroChatSim() {
 
       {/* chat header */}
       <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100">
-        <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold flex-shrink-0">SR</div>
+        <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center flex-shrink-0"><CursorMark size={20} /></div>
         <div className="flex-1 min-w-0">
           <div className="text-sm font-semibold text-gray-800">SiteUpscale</div>
           <div className="flex items-center gap-1.5">
@@ -1132,7 +1166,7 @@ function HeroChatSim() {
                 animation: !isPast ? 'slideUp 0.26s ease-out both' : undefined,
               }}
             >
-              <div className="w-7 h-7 rounded-full bg-accent/15 flex items-center justify-center text-[10px] font-bold text-accent flex-shrink-0">SR</div>
+              <div className="w-7 h-7 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0"><CursorMark size={14} color="#0d9488" /></div>
               <div className={`rounded-2xl rounded-bl-sm px-4 py-2.5 max-w-[84%] ${msg.urgent ? 'bg-slate-100 border border-slate-200' : 'bg-gray-100'}`}>
                 <p className={`text-[13px] leading-snug ${msg.urgent ? 'text-slate-700' : 'text-gray-700'}`}>{msg.text}</p>
               </div>
@@ -1143,7 +1177,7 @@ function HeroChatSim() {
         {/* agent typing dots */}
         {isAgentTyping && (
           <div className="flex items-end gap-2" style={{ animation: 'slideUp 0.22s ease-out both' }}>
-            <div className="w-7 h-7 rounded-full bg-accent/15 flex items-center justify-center text-[10px] font-bold text-accent flex-shrink-0">SR</div>
+            <div className="w-7 h-7 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0"><CursorMark size={14} color="#0d9488" /></div>
             <div className="bg-gray-100 rounded-2xl rounded-bl-sm px-4 py-3">
               <div className="flex gap-1.5 items-center h-3.5">
                 {[0, 140, 280].map((d) => (
@@ -1335,7 +1369,7 @@ function HeroChatSim() {
           </div>
         </div>
         <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 flex-shrink-0">
-          <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold flex-shrink-0">SR</div>
+          <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center flex-shrink-0"><CursorMark size={20} /></div>
           <div>
             <div className="text-sm font-semibold text-gray-800">SiteUpscale</div>
             <div className="flex items-center gap-1.5">
@@ -1359,7 +1393,7 @@ function HeroChatSim() {
             )
             if (msg.from === 'preview') return (
               <div key={i} className="flex items-end gap-2" style={{ animation: 'slideUp 0.26s ease-out both' }}>
-                <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">SR</div>
+                <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center flex-shrink-0"><CursorMark size={14} /></div>
                 <div className="rounded-2xl rounded-bl-sm bg-gray-100 p-2.5 max-w-[82%]">
                   <div className="rounded-lg border border-gray-200 bg-white p-2.5 flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-md bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white flex-shrink-0">{Icon.globe}</div>
@@ -1381,7 +1415,7 @@ function HeroChatSim() {
             )
             return (
               <div key={i} className="flex items-end gap-2" style={{ animation: 'slideUp 0.26s ease-out both' }}>
-                <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">SR</div>
+                <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center flex-shrink-0"><CursorMark size={14} /></div>
                 <div className="rounded-2xl rounded-bl-sm bg-gray-100 px-4 py-2.5 max-w-[80%]">
                   <p className="text-[13px] text-gray-800 leading-snug">{msg.text}</p>
                 </div>
@@ -1513,11 +1547,11 @@ function HeroChatSim() {
         <div
           ref={driverRef}
           className="hidden lg:block relative"
-          style={{ height: '1188px', marginTop: '0.5rem' }}
+          style={{ height: '400vh', marginTop: '0.5rem' }}
         >
           <div
             className="sticky top-0 flex flex-col bg-white overflow-hidden"
-            style={{ height: 'auto', minHeight: 0 }}
+            style={{ height: '100vh' }}
           >
             {/* Heading — locked at top of sticky panel, zero gap to content */}
             <div className="flex-shrink-0 pt-10 pb-2 text-center">
@@ -1533,7 +1567,7 @@ function HeroChatSim() {
             {/* Content row — natural height, does NOT flex-grow so the strip follows immediately below */}
             <div className="flex items-start gap-14 xl:gap-20 pt-6 pb-0">
             {/* Left: step descriptions — absolutely stacked, cross-fade between steps */}
-            <div className="w-[360px] xl:w-[400px] flex-shrink-0 relative flex flex-col text-left" style={{ marginTop: '2rem' }}>
+            <div className="w-[360px] xl:w-[400px] flex-shrink-0 relative flex flex-col text-left" style={{ marginTop: '2rem', height: 'min(620px, calc(100vh - 580px))' }}>
               {STEPS.map((step, i) => (
                 <div
                   key={i}
@@ -1571,7 +1605,7 @@ function HeroChatSim() {
 
             {/* Right: demo panel + progress dots */}
             <div className="flex-1 min-w-0 flex flex-col justify-start gap-4" style={{ marginTop: '1rem' }}>
-              <div className="rounded-3xl overflow-hidden relative" style={{ height: '620px', ...demoBg }}>
+              <div className="rounded-3xl overflow-hidden relative" style={{ height: 'min(620px, calc(100vh - 580px))', ...demoBg }}>
                 <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 70% 55% at 72% -5%, rgba(15,118,110,0.28) 0%, transparent 65%), radial-gradient(ellipse 55% 45% at 8% 105%, rgba(20,184,166,0.13) 0%, transparent 60%)' }} />
                 <div className="absolute -top-px right-[10%] w-[45%] h-px bg-gradient-to-r from-transparent via-teal-400/30 to-transparent pointer-events-none" />
                 {scenes.map((scene, i) => (

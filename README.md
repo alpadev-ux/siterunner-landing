@@ -1,6 +1,6 @@
-# SiteRunner Landing Page
+# SiteUpscale Landing Page
 
-A responsive single-page landing page for SiteRunner — simple monthly website updates for local restaurants.
+A responsive single-page landing page for SiteUpscale — simple monthly website updates for local restaurants.
 
 ## Tech stack
 

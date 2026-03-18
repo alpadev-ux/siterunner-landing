@@ -191,7 +191,7 @@ export default function App() {
     try {
       const payload = {
         access_key: 'fc05109e-be57-4471-ac9c-77b28ac9952f',
-        subject: 'New SiteRunner Lead',
+        subject: 'New SiteUpscale Lead',
         botcheck: '',
         ...formData,
       }
@@ -246,7 +246,7 @@ export default function App() {
 
         {/* ── integrated nav ── */}
         <nav className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <span className="font-bold text-white text-lg tracking-tight">SiteRunner</span>
+          <span className="font-bold text-white text-lg tracking-tight">SiteUpscale</span>
           <div className="hidden sm:flex items-center gap-6 text-sm font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>
             <button onClick={() => scrollTo('how-it-works')} className="hover:text-white transition-colors duration-150">How it works</button>
             <button onClick={() => scrollTo('pricing')} className="hover:text-white transition-colors duration-150">Pricing</button>
@@ -623,7 +623,7 @@ export default function App() {
           <Reveal>
             <div className="text-center mb-2">
               <span className="inline-block rounded-full border border-teal-200/60 bg-teal-50 px-4 py-1.5 text-xs font-semibold text-teal-700">
-                Web agencies charge $1,500 to $5,000 per month. SiteRunner doesn&apos;t.
+                Web agencies charge $1,500 to $5,000 per month. SiteUpscale doesn&apos;t.
               </span>
             </div>
             <SectionLabel text="Pricing" className="mt-5" />
@@ -709,7 +709,7 @@ export default function App() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Web3Forms hidden fields */}
                   <input type="hidden" name="access_key" value="fc05109e-be57-4471-ac9c-77b28ac9952f" />
-                  <input type="hidden" name="subject" value="New SiteRunner Lead" />
+                  <input type="hidden" name="subject" value="New SiteUpscale Lead" />
                   <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -816,13 +816,13 @@ export default function App() {
       <footer className="bg-gray-950 border-t border-white/5 py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <p className="font-bold text-white text-base">SiteRunner</p>
+            <p className="font-bold text-white text-base">SiteUpscale</p>
             <p className="text-sm text-gray-500 mt-0.5">Website care for local businesses. You never have to think about it.</p>
           </div>
-          <a href="mailto:hello@siterunner.example" className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
-            hello@siterunner.example
+          <a href="mailto:hello@siteupscale.com" className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
+            hello@siteupscale.com
           </a>
-          <p className="text-sm text-gray-600">© {new Date().getFullYear()} SiteRunner. All rights reserved.</p>
+          <p className="text-sm text-gray-600">© {new Date().getFullYear()} SiteUpscale. All rights reserved.</p>
         </div>
       </footer>
       </div>{/* end Card 4 */}
@@ -1078,7 +1078,7 @@ function HeroChatSim() {
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
         <span className="w-3 h-3 rounded-full bg-[#28c840]" />
         <div className="flex-1 mx-3 rounded-md bg-white border border-gray-200 h-6 flex items-center justify-center text-xs text-gray-400 font-medium">
-          siterunner.app/messages
+          siteupscale.com/messages
         </div>
       </div>
 
@@ -1086,7 +1086,7 @@ function HeroChatSim() {
       <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100">
         <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold flex-shrink-0">SR</div>
         <div className="flex-1 min-w-0">
-          <div className="text-sm font-semibold text-gray-800">SiteRunner</div>
+          <div className="text-sm font-semibold text-gray-800">SiteUpscale</div>
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
             <span className="text-xs text-gray-400">Online · updates within 1 hr</span>
@@ -1172,7 +1172,7 @@ function HeroChatSim() {
                 )}
               </>
             ) : (
-              <span className="text-gray-400">Message SiteRunner...</span>
+              <span className="text-gray-400">Message SiteUpscale...</span>
             )}
           </span>
           <button
@@ -1242,8 +1242,8 @@ function HeroChatSim() {
     { c: 'text-teal-300/90', t: '</html>' },
     { c: '',                  t: '' },
     { c: 'text-emerald-400', t: '✓  Build complete  (2.1s)' },
-    { c: 'text-white/35',    t: '   Deploying to siterunner.app...' },
-    { c: 'text-emerald-300', t: '✓  Live: apex-plumbing.siterunner.app' },
+    { c: 'text-white/35',    t: '   Deploying to siteupscale.com...' },
+    { c: 'text-emerald-300', t: '✓  Live: apex-plumbing.siteupscale.com' },
   ]
 
   function TerminalDemo({ active }) {
@@ -1276,7 +1276,7 @@ function HeroChatSim() {
           <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
           <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
           <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-          <span className="ml-3 font-mono text-[11px] text-white/35 truncate">~/siterunner/apex-plumbing  —  index.html</span>
+          <span className="ml-3 font-mono text-[11px] text-white/35 truncate">~/siteupscale/apex-plumbing  —  index.html</span>
         </div>
         <div ref={scrollRef} className="flex-1 overflow-y-auto p-5 font-mono text-[11px] leading-[1.8]" style={{ scrollbarWidth: 'none' }}>
           {TERMINAL_LINES.slice(0, visible).map((line, i) => (
@@ -1297,10 +1297,10 @@ function HeroChatSim() {
   }
 
   const APPROVAL_MSGS = [
-    { from: 'sr',      text: "Your website is ready for review! Take a look \uD83D\uDC40",                delay: 700  },
-    { from: 'preview', url:  'apex-plumbing.siterunner.app',                                           delay: 1500 },
-    { from: 'owner',   text: "Just checked it on my phone — this looks incredible. Love it!",         delay: 3400 },
-    { from: 'sr',      text: "So glad you love it! Your site is now live. Welcome to SiteRunner \uD83C\uDF89", delay: 5000 },
+    { from: 'sr',      text: "Your website is ready for review! Take a look \uD83D\uDC40",                 delay: 700  },
+    { from: 'preview', url:  'apex-plumbing.siteupscale.com',                                            delay: 1500 },
+    { from: 'owner',   text: "Just checked it on my phone — this looks incredible. Love it!",            delay: 3400 },
+    { from: 'sr',      text: "So glad you love it! Your site is now live. Welcome to SiteUpscale \uD83C\uDF89", delay: 5000 },
     { from: 'badge',                                                                                    delay: 6000 },
   ]
 
@@ -1331,13 +1331,13 @@ function HeroChatSim() {
           <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
           <span className="w-3 h-3 rounded-full bg-[#28c840]" />
           <div className="flex-1 mx-3 rounded-md bg-white border border-gray-200 h-6 flex items-center justify-center text-xs text-gray-400 font-medium">
-            siterunner.app/preview
+            siteupscale.com/preview
           </div>
         </div>
         <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 flex-shrink-0">
           <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold flex-shrink-0">SR</div>
           <div>
-            <div className="text-sm font-semibold text-gray-800">SiteRunner</div>
+            <div className="text-sm font-semibold text-gray-800">SiteUpscale</div>
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
               <span className="text-xs text-gray-400">Online - preview ready</span>
@@ -1879,7 +1879,7 @@ function WebsiteTransformation() {
                 <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0" />
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-gray-900">After</p>
-                  <p className="text-[12px] font-semibold text-gray-900 leading-snug">SiteRunner rebuild</p>
+                  <p className="text-[12px] font-semibold text-gray-900 leading-snug">SiteUpscale rebuild</p>
                 </div>
               </div>
               {/* Stronger shadow — visually elevated */}

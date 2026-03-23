@@ -1,7 +1,7 @@
 import { Component } from 'react'
 
 /**
- * Catches render errors so the page isn’t a blank white screen — shows the
+ * Catches render errors so the page isn’t a blank white screen, and shows the
  * actual exception (check console for component stack).
  */
 export class ErrorBoundary extends Component {

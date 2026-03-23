@@ -146,7 +146,7 @@ function FinalCtaSection({ scrollTo }) {
     <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-14">
       <div className="border border-stone-200/90 rounded-2xl overflow-hidden shadow-[0_20px_50px_-24px_rgba(0,0,0,0.12)]">
 
-        {/* Arch image strip — top of card */}
+        {/* Arch image strip: top of card */}
         <div className="flex gap-1 sm:gap-1.5 items-end bg-[#faf6f0]">
           {[
             { src: '/lux-1.jpg',  pos: 'center center', flex: '16', h: 'clamp(110px,14vw,220px)' },
@@ -303,7 +303,7 @@ export default function App() {
             <span className="text-[#b07a50]/90 italic">first impression.</span>
           </h1>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-stone-500/75 font-light max-w-md mx-auto leading-relaxed">
-            We design a custom website for your practice at no cost, then keep it current and polished — month after month.
+            We design a custom website for your practice at no cost, then keep it current and polished, month after month.
           </p>
         </div>
 
@@ -431,7 +431,7 @@ export default function App() {
 
                 <div className="mt-14 border-t border-stone-300/60">
                   {[
-                    { stat: '75%', label: 'Credibility from design', body: 'of visitors judge a practice\'s credibility based on design alone — before reading a single word or seeing a single service.', source: 'Stanford Web Credibility Research' },
+                    { stat: '75%', label: 'Credibility from design', body: 'of visitors judge a practice\'s credibility based on design alone, before reading a single word or seeing a single service.', source: 'Stanford Web Credibility Research' },
                     { stat: '53%', label: 'Mobile visitors lost', body: 'of mobile visits are abandoned if a page takes longer than 3 seconds to load. Slow is indistinguishable from unprofessional.', source: 'Google / SOASTA Research' },
                     { stat: '76%', label: 'Local searches convert', body: 'of people who search for a nearby practice visit within 24 hours. Your site is often the deciding factor.', source: 'Google Consumer Insights' },
                   ].map((item, i) => (
@@ -453,7 +453,7 @@ export default function App() {
                   <div className="mt-20 pt-16 border-t border-stone-300/50 grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-10 md:gap-16 items-end">
                     <div>
                       <p className="font-display text-[clamp(1.5rem,3vw,2.4rem)] font-light text-stone-700 leading-[1.3] tracking-[-0.02em]">
-                        &ldquo;Your patients look you up before they call. What they find either earns the appointment — or loses it to the practice down the street.&rdquo;
+                        &ldquo;Your patients look you up before they call. What they find either earns the appointment, or loses it to the practice down the street.&rdquo;
                       </p>
                       <div className="mt-8 flex items-center gap-4">
                         <span className="w-8 h-px bg-[#c9a87c]" />
@@ -484,7 +484,7 @@ export default function App() {
                     Continuous care,<br />nothing<br />left to you.
                   </h2>
                   <p className="mt-6 text-stone-500 font-light text-base leading-relaxed">
-                    Hosting, updates, and ongoing refinement — your digital presence stays as considered as the practice behind it.
+                    Hosting, updates, and ongoing refinement. Your digital presence stays as considered as the practice behind it.
                   </p>
                   <button
                     onClick={() => document.getElementById('free-offer')?.scrollIntoView({ behavior: 'smooth' })}
@@ -493,7 +493,7 @@ export default function App() {
                     Begin with a free site
                     <span className="text-[#b07a50] group-hover:translate-x-1 transition-transform duration-200">{Icon.arrow}</span>
                   </button>
-                  {/* arch image panel — desktop only */}
+                  {/* arch image panel: desktop only */}
                   <div className="hidden md:block mt-10 w-full overflow-hidden" style={{ borderRadius: '9999px 9999px 0 0', height: 'clamp(260px,28vw,420px)' }}>
                     <img
                       src="/lux-7.jpg"
@@ -510,7 +510,7 @@ export default function App() {
               <Reveal delay={100}>
                 <div className="border-t border-stone-200">
                   {[
-                    { label: 'Business hours',   desc: 'Always current — across every page and platform.' },
+                    { label: 'Business hours',   desc: 'Always current across every page and platform.' },
                     { label: 'Pricing & services', desc: 'New rates and service changes go live fast, without back-and-forth.' },
                     { label: 'Promotions',       desc: 'Seasonal offers and special announcements posted when you need them.' },
                     { label: 'Photo refreshes',  desc: 'Fresh imagery when you have it. We handle the placement.' },
@@ -581,7 +581,7 @@ export default function App() {
                     Transparent.<br />Flat-rate.<br />No surprises.
                   </h2>
                   <p className="mt-6 text-stone-500 font-light text-base leading-relaxed">
-                    Design, hosting, and ongoing care — handled quietly in the background. One clear monthly rate, everything included.
+                    Design, hosting, and ongoing care, handled quietly in the background. One clear monthly rate, everything included.
                   </p>
                   <div className="mt-8 pt-6 border-t border-stone-200">
                     <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">Starting from</p>
@@ -796,25 +796,25 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
     )
   }
 
-  /** Med spa: editorial layout — no terminal / chat demos */
+  /** Med spa: editorial layout (no terminal / chat demos) */
   function MedSpaEditorialProcess() {
     const STEPS = [
       {
         n: '01',
         title: 'We build your website for free',
-        body: 'A fresh site or a full rebuild — designed and coded for your practice, not from a template. You invest nothing until you’ve seen the work.',
+        body: 'A fresh site or a full rebuild, designed and coded for your practice, not from a template. You invest nothing until you’ve seen the work.',
         bullets: ['Custom layout and typography', 'Mobile-first, fast loading', 'Live preview before you commit', '$0 until you approve'],
       },
       {
         n: '02',
         title: 'Only pay if you love it',
-        body: 'We send a private preview. Walk through it on your phone. If it feels right, your simple monthly plan begins. If not, you walk away — no invoice, no contract.',
+        body: 'We send a private preview. Walk through it on your phone. If it feels right, your simple monthly plan begins. If not, you walk away with no invoice, no contract.',
         bullets: ['Review on your own time', 'Month-to-month, cancel anytime', 'Your domain always stays with you'],
       },
       {
         n: '03',
         title: 'We keep everything current',
-        body: 'No dashboards, no tickets, no chasing an agency. Message us when something needs to change — hours, photos, promotions — and we handle it, usually within the hour.',
+        body: 'No dashboards, no tickets, no chasing an agency. Message us when something needs to change (hours, photos, promotions), and we handle it, usually within the hour.',
         bullets: ['Hosting and security included', 'Updates when you need them', 'Quiet, reliable presence online'],
       },
     ]
@@ -837,11 +837,11 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
               </h2>
             </div>
             <p className="text-stone-500 font-light text-base md:text-lg leading-relaxed max-w-sm text-right hidden sm:block">
-              Thoughtful design, clear process, and ongoing care — the way a luxury brand treats its presence.
+              Thoughtful design, clear process, and ongoing care, the way a luxury brand treats its presence.
             </p>
           </div>
           <p className="mt-6 text-stone-500 font-light text-base leading-relaxed sm:hidden">
-            Thoughtful design, clear process, and ongoing care — the way a luxury brand treats its presence.
+            Thoughtful design, clear process, and ongoing care, the way a luxury brand treats its presence.
           </p>
         </div>
 
@@ -859,7 +859,7 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
                   <div className="lg:hidden flex-1 h-px bg-stone-200" />
                 </div>
                 <div className="lg:col-span-5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-400 mb-5">0{i + 1} — The process</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-400 mb-5">0{i + 1} · The process</p>
                   <h3 className="font-display text-2xl sm:text-3xl md:text-[2.1rem] font-semibold text-stone-900 tracking-[-0.025em] mb-6 leading-[1.15]">
                     {step.title}
                   </h3>
@@ -999,12 +999,12 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
 
 
 const LUX_FAQS = [
-  { q: 'Is my domain always mine?', a: 'Always. Your domain belongs to you — now and long after, regardless of anything else. We never hold ownership over any part of your online presence.' },
+  { q: 'Is my domain always mine?', a: 'Always. Your domain belongs to you, now and long after, regardless of anything else. We never hold ownership over any part of your online presence.' },
   { q: 'What happens if I decide to cancel?', a: 'Your site remains fully live through the end of your current billing period. No abrupt changes, no disruptions to your clients.' },
   { q: 'How quickly are updates made?', a: 'Most requests are handled within the hour. If something is time-sensitive, simply note it and we prioritize accordingly.' },
-  { q: 'Can you work with an existing site?', a: 'Yes. Whether you need a thoughtful refresh or a complete redesign, we start from where you are — and bring it to where it should be.' },
+  { q: 'Can you work with an existing site?', a: 'Yes. Whether you need a thoughtful refresh or a complete redesign, we start from where you are, and bring it to where it should be.' },
   { q: 'Is there any long-term commitment?', a: 'None. Month-to-month only. You stay because the experience earns it, not because a contract requires it.' },
-  { q: 'What does the process look like?', a: 'We design and build your site privately, then share a preview for your review. Only once you approve does anything go live — and your plan begin.' },
+  { q: 'What does the process look like?', a: 'We design and build your site privately, then share a preview for your review. Only once you approve does anything go live, and your plan begins.' },
 ]
 
 

@@ -15,6 +15,7 @@ export default {
       },
       fontFamily: {
         sans: ['DM Sans', 'system-ui', 'sans-serif'],
+        display: ['Cormorant Garamond', 'Georgia', 'ui-serif', 'serif'],
       },
       boxShadow: {
         'card': '0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06)',

@@ -584,9 +584,11 @@ export default function App() {
                     Design, hosting, and ongoing care, handled quietly in the background. One clear monthly rate, everything included.
                   </p>
                   <div className="mt-8 pt-6 border-t border-stone-200">
-                    <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">Starting from</p>
-                    <p className="font-display text-[3.5rem] font-semibold text-stone-900 leading-none tracking-tight">$99<span className="text-lg font-light text-stone-400 ml-1">/mo</span></p>
-                    <p className="mt-3 text-xs text-stone-500 font-light">Month-to-month. Cancel anytime.</p>
+                    <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-stone-400 mb-3">Plans</p>
+                    <p className="font-display text-[clamp(1.35rem,2.2vw,1.75rem)] font-semibold text-stone-900 leading-snug tracking-[-0.02em]">
+                      Essentials, Standard, and Complete. One monthly rate per tier, everything included.
+                    </p>
+                    <p className="mt-4 text-xs text-stone-500 font-light">Month-to-month. Cancel anytime.</p>
                   </div>
                   <div className="hidden md:block mt-10 overflow-hidden" style={{ borderRadius: '9999px 9999px 0 0', height: 'clamp(220px,24vw,380px)' }}>
                     <img src="/lux-6.jpg" alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
@@ -685,7 +687,7 @@ export default function App() {
                   <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <FormField label="Business name" name="business_name" type="text" placeholder="e.g. Apex Plumbing Co." value={formData.business_name} onChange={handleFormChange} required />
+                    <FormField label="Business name" name="business_name" type="text" placeholder="e.g. Radiance Med Spa" value={formData.business_name} onChange={handleFormChange} required />
                     <FormField label="Website URL" name="website_url" type="url" placeholder="https://yourbusiness.com" value={formData.website_url} onChange={handleFormChange} />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -785,7 +787,7 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
     const phrase = 'Zero upfront · White-glove updates · Your domain stays yours · Same-day care · '
     return (
       <div className="border-y border-stone-200/70 bg-[#f3efe8]/80 py-3.5 overflow-hidden">
-        <div className="flex animate-[marqueeScroll_38s_linear_infinite] whitespace-nowrap text-[9px] font-medium uppercase tracking-[0.38em] text-stone-400" style={{ width: 'max-content' }}>
+        <div className="flex animate-[marqueeScroll_90s_linear_infinite] whitespace-nowrap text-[9px] font-medium uppercase tracking-[0.38em] text-stone-400" style={{ width: 'max-content' }}>
           {[0, 1].map((dup) =>
             Array.from({ length: 10 }).map((_, i) => (
               <span key={`${dup}-${i}`} className="mr-16">{phrase}</span>
@@ -859,7 +861,7 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
                   <div className="lg:hidden flex-1 h-px bg-stone-200" />
                 </div>
                 <div className="lg:col-span-5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-400 mb-5">0{i + 1} · The process</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-400 mb-5">The process</p>
                   <h3 className="font-display text-2xl sm:text-3xl md:text-[2.1rem] font-semibold text-stone-900 tracking-[-0.025em] mb-6 leading-[1.15]">
                     {step.title}
                   </h3>
@@ -879,9 +881,6 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
                 <div className="lg:col-span-5">
                   {i === 0 && (
                     <div className="border border-stone-200 p-5 sm:p-7 md:p-9" style={{ background: 'linear-gradient(152deg, #faf7f4 0%, #f2ece3 100%)' }}>
-                      {/* Watermark number */}
-                      <p className="font-display text-[4.5rem] font-semibold leading-none text-stone-200 tracking-tight select-none mb-6">01</p>
-                      {/* Build spec */}
                       <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#b07a50]/80 mb-4">What we build</p>
                       <div className="space-y-0 border-t border-stone-200">
                         {[
@@ -906,7 +905,6 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
                   )}
                   {i === 1 && (
                     <div className="border border-stone-200 p-5 sm:p-7 md:p-9" style={{ background: 'linear-gradient(152deg, #faf7f4 0%, #f2ece3 100%)' }}>
-                      <p className="font-display text-[4.5rem] font-semibold leading-none text-stone-200 tracking-tight select-none mb-6">02</p>
                       <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#b07a50]/80 mb-5">Your decision, your timeline</p>
                       {/* Decision paths */}
                       <div className="space-y-3 mb-8">
@@ -938,7 +936,6 @@ function FormField({ label, name, type, placeholder, value, onChange, required }
                   )}
                   {i === 2 && (
                     <div className="border border-stone-200 p-5 sm:p-7 md:p-9" style={{ background: 'linear-gradient(152deg, #faf7f4 0%, #f2ece3 100%)' }}>
-                      <p className="font-display text-[4.5rem] font-semibold leading-none text-stone-200 tracking-tight select-none mb-6">03</p>
                       <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#b07a50]/80 mb-5">Recent activity log</p>
                       {/* Mock update feed */}
                       <div className="space-y-0 border-t border-stone-200 mb-7">

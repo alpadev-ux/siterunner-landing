@@ -178,7 +178,7 @@ function FinalCtaSection({ scrollTo }) {
                   <button
                     type="button"
                     onClick={() => scrollTo('free-offer')}
-                    className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 font-medium px-6 sm:px-8 py-4 text-sm sm:text-base whitespace-nowrap transition-all duration-200 hover:-translate-y-1 focus:outline-none focus:ring-1 focus:ring-offset-2 bg-stone-900 text-[#faf7f4] hover:bg-stone-800 shadow-[0_6px_24px_-8px_rgba(0,0,0,0.2)] focus:ring-stone-900 focus:ring-offset-[#faf7f4]"
+                    className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 font-medium px-6 sm:px-8 py-4 text-sm sm:text-base whitespace-nowrap transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#b07a50]/45 focus:ring-offset-2 bg-[#b07a50] text-[#faf7f4] hover:bg-[#9d6848] border border-[#d4b896]/65 shadow-[0_6px_22px_-6px_rgba(176,122,80,0.42),inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_10px_28px_-6px_rgba(176,122,80,0.5),inset_0_1px_0_rgba(255,255,255,0.24)] tracking-[0.04em] focus:ring-offset-[#faf7f4]"
                   >
                     Request My Complimentary Site
                     <span>{Icon.arrow}</span>
@@ -287,7 +287,7 @@ export default function App() {
           </div>
           <button
             onClick={() => scrollTo('free-offer')}
-            className="text-sm font-medium border border-stone-300/90 text-stone-800 px-5 py-2.5 transition-all duration-200 hover:border-stone-900 hover:bg-stone-900 hover:text-[#faf7f4]"
+            className="text-sm font-medium border border-stone-300/90 text-stone-800 px-5 py-2.5 transition-all duration-200 hover:border-[#b07a50] hover:bg-[#b07a50] hover:text-[#faf7f4] hover:shadow-[0_4px_16px_-4px_rgba(176,122,80,0.35)]"
           >
             Get Started
           </button>
@@ -366,7 +366,7 @@ export default function App() {
         <div className="py-8 sm:py-10 px-4 flex flex-col sm:flex-row gap-3 justify-center items-center">
           <button
             onClick={() => scrollTo('free-offer')}
-            className="w-full max-w-xs sm:w-auto inline-flex items-center justify-center gap-2 font-medium px-7 py-4 text-sm whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 bg-stone-900 text-[#faf7f4] hover:bg-stone-800 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.22)]"
+            className="w-full max-w-xs sm:w-auto inline-flex items-center justify-center gap-2 font-medium px-7 py-4 text-sm whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5 bg-[#b07a50] text-[#faf7f4] hover:bg-[#9d6848] border border-[#d4b896]/65 shadow-[0_6px_22px_-6px_rgba(176,122,80,0.42),inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_10px_28px_-6px_rgba(176,122,80,0.5),inset_0_1px_0_rgba(255,255,255,0.24)] tracking-[0.04em] focus:outline-none focus:ring-2 focus:ring-[#b07a50]/45 focus:ring-offset-2 focus:ring-offset-[#faf7f4]"
           >
             Request My Complimentary Site
             <span>{Icon.arrow}</span>
@@ -714,7 +714,7 @@ export default function App() {
                   <button
                     type="submit"
                     disabled={formStatus === 'loading'}
-                    className="mt-2 w-full block py-4 px-6 text-sm sm:text-base whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 focus:outline-none focus:ring-1 focus:ring-offset-2 bg-stone-900 hover:bg-stone-800 text-[#faf7f4] font-medium focus:ring-stone-900"
+                    className="mt-2 w-full block py-4 px-6 text-sm sm:text-base whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#b07a50]/45 focus:ring-offset-2 bg-[#b07a50] hover:bg-[#9d6848] text-[#faf7f4] font-medium border border-[#d4b896]/65 shadow-[0_6px_22px_-6px_rgba(176,122,80,0.42),inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_10px_28px_-6px_rgba(176,122,80,0.5),inset_0_1px_0_rgba(255,255,255,0.24)] tracking-[0.04em] focus:ring-offset-[#faf6f0]"
                   >
                     {formStatus === 'loading' ? 'Sending…' : 'Request My Complimentary Site'}
                   </button>

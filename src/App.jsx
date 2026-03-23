@@ -474,14 +474,17 @@ export default function App() {
 
       {/* ── What We Handle ───────────────────────────────────────── */}
       <section className="pt-14 pb-12 md:pt-28 md:pb-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8 md:gap-20 items-start">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-10 md:gap-20 items-start">
               {/* Left: sticky editorial heading */}
               <Reveal>
                 <div className="md:sticky md:top-24">
                   <p className="text-[9px] font-medium uppercase tracking-[0.32em] text-[#b07a50]/80 mb-6">What is covered</p>
-                  <h2 className="font-display text-[clamp(2rem,3.8vw,3.2rem)] font-semibold text-stone-900 tracking-[-0.035em] leading-[1.1]">
-                    Continuous care,<br />nothing<br />left to you.
+                  <h2 className="font-display text-[clamp(1.85rem,5vw,3.2rem)] font-semibold text-stone-900 tracking-[-0.035em] leading-[1.12]">
+                    <span className="md:hidden">Continuous care, nothing left to you.</span>
+                    <span className="hidden md:block">
+                      Continuous care,<br />nothing<br />left to you.
+                    </span>
                   </h2>
                   <p className="mt-6 text-stone-500 font-light text-base leading-relaxed">
                     Hosting, updates, and ongoing refinement. Your digital presence stays as considered as the practice behind it.
@@ -519,9 +522,16 @@ export default function App() {
                     { label: 'Mobile experience', desc: 'Your site stays fast and precise on every device, always.' },
                     { label: 'Same-day turnaround', desc: 'Most requests are handled within the hour during business hours.' },
                   ].map(({ label, desc }, i) => (
-                    <div key={label} className="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_1fr] items-start gap-4 py-5 border-b border-stone-200">
-                      <p className="text-sm font-medium text-stone-800">{label}</p>
-                      <p className="text-sm text-stone-500 font-light leading-snug md:text-right">{desc}</p>
+                    <div
+                      key={label}
+                      className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-start gap-2.5 md:gap-x-10 md:gap-y-0 py-6 md:py-5 border-b border-stone-200"
+                    >
+                      <p className="text-[15px] md:text-sm font-semibold text-stone-900 leading-snug">
+                        {label}
+                      </p>
+                      <p className="text-[15px] md:text-sm text-stone-500 font-light leading-relaxed border-l-2 border-[#c9a87c]/45 pl-3.5 md:border-l-0 md:pl-0 md:text-right">
+                        {desc}
+                      </p>
                     </div>
                   ))}
                 </div>
